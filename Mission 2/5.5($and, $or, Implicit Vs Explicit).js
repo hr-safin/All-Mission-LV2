@@ -32,3 +32,26 @@ db.test.find({
     age : 1,
     gender : 1
 }).sort( { age : 1} )
+
+
+// explicit or
+
+db.test.find({
+    $or : [
+        {gender : "Female"},
+        {age : {$ne : 15}},
+        {age : {$lt : 35}}
+    ]
+}).project({
+    age : 1,
+    gender : 1
+}).sort( { age : 1} )
+
+db.test.find({
+    $or : [
+        {interests : "Cooking"},
+        {interests : "Gaming"}
+    ]
+}).project({
+    interests : 1
+})
