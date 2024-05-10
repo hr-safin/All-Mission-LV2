@@ -34,7 +34,7 @@ db.test.find({
 }).sort( { age : 1} )
 
 
-// explicit or
+// explicit Or
 
 db.test.find({
     $or : [
@@ -54,4 +54,21 @@ db.test.find({
     ]
 }).project({
     interests : 1
+})
+
+db.test.find({
+    $or : [
+        {"skill.name" : "KOTLIN"},
+        {"skills.name" : "PYTHON"}
+    ]
+}).project({
+    "skills.name" : 1
+})
+
+//implicit or
+
+db.test.find({
+    "skills.name" : {$in : ["KOTLIN", "PYTHON"] } 
+}).project({
+    "skills.name" : 1
 })
