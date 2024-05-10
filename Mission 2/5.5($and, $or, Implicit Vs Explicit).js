@@ -12,3 +12,23 @@ db.test.find({
         {age : {$lt : 35}}
     ]
 }, {age : 1}).sort({age : 1})
+
+db.test.find({
+    $and : [
+        {age : {$ne : 15}},
+        {age : {$lt : 35}}
+    ]
+}).project({
+    age : 1
+}).sort( { age : 1} )
+
+db.test.find({
+    $and : [
+        {gender : "Female"},
+        {age : {$ne : 15}},
+        {age : {$lt : 35}}
+    ]
+}).project({
+    age : 1,
+    gender : 1
+}).sort( { age : 1} )
