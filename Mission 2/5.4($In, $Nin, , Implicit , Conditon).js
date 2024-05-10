@@ -8,6 +8,17 @@ db.test.find({ age: { $gt: 18, $lt: 30 } }, { age: 1 }).sort({ age: 1 }); // imp
 db.test
   .find({ gender: "Female", age: { $gt: 18, $lt: 30,} }, { age: 1, gender: 1 })
   .sort({ age: 1 }); // implicit and
+
+// find all the even age data from the data base 
 db.test
   .find({ gender: "Female", age: {$in : [18,20,22,24,26,28,30]} }, { age: 1, gender: 1 })
-  .sort({ age: 1 }); // implicit and
+  .sort({ age: 1 });
+
+// find all the not even age data from the data base 
+db.test
+  .find({ gender: "Female", age: {$nin : [18,20,22,24,26,28,30]} }, { age: 1, gender: 1 })
+  .sort({ age: 1 }); 
+
+db.test
+  .find({ gender: "Female", age: {$nin : [18,20,22,24,26,28,30]}, interests : {$in : ["Cooking","Gaming"]}}, { age: 1, gender: 1, interests : 1 })
+  .sort({ age: 1 })
