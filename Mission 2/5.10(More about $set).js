@@ -25,3 +25,16 @@ db.test.updateOne(
         }
     }
 )
+
+// increment in mongo db
+
+db.test.updateOne(
+    {
+        _id : ObjectId("6406ad63fc13ae5a40000065"),
+    },
+    {
+        $inc : {
+            age : 1
+        }
+    }
+)
