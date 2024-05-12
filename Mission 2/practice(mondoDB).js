@@ -50,6 +50,33 @@ db.test.find({
   });
 
 
+ //5. Add a new skill to the skills array for the document with the email
+// "aminextleveldeveloper@gmail.com". The skill is
+// {"name": "Python"
+// ,
+// "level": "Beginner"
+// ,
+// "isLearning": true}
+
+db.test.insertOne(
+    {"email" : "aminextleveldeveloper@gmail.com" ,
+    skills : []
+})
+
+db.test.updateOne(
+    {"email" : "aminextleveldeveloper@gmail.com" },
+    {
+        $push : {
+            skills : {
+                "name": "Python" ,
+                "level": "Beginner",
+                 "isLearning": true 
+            }
+        }
+    }
+)
+
+
 //6 . Add a new language "Spanish" to the list of languages spoken by the
 //person.
 
