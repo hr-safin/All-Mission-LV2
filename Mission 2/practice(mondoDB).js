@@ -58,11 +58,13 @@ db.test.find({
 // ,
 // "isLearning": true}
 
+//step 1 ---> insert a new object in the array of the object with a email and empty skills field 
 db.test.insertOne(
     {"email" : "aminextleveldeveloper@gmail.com" ,
     skills : []
 })
 
+// step two --> push the new object in the skills array
 db.test.updateOne(
     {"email" : "aminextleveldeveloper@gmail.com" },
     {
