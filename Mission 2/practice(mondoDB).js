@@ -60,4 +60,17 @@ db.test.update(
         languages : "English"
     }
 })
+
+
+//7. Remove the skill with the name "Kotlin" from the skills array.
+
+db.test.updateOne(
+    {"_id" : ObjectId("6406ad65fc13ae5a400000c6")},
+    {
+    $pull : {
+        skills : {
+            name : "KOTLIN"
+        }
+    }
+})
   
