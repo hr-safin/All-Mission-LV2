@@ -34,3 +34,18 @@ db.test.find({
         $eq : []
     }
 })
+
+//4. Find documents where the person has skills in both "JavaScript" and
+//"Java."
+
+db.test.find({
+    skills: {
+      $elemMatch: {
+        $and: [
+          { name: { $eq: "JavaScript" } }, // Case-sensitive match for "JavaScript"
+          { name: { $eq: "Java" } }        // Case-sensitive match for "Java"
+        ]
+      }
+    }
+  });
+  
