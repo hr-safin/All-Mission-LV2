@@ -48,4 +48,16 @@ db.test.find({
       }
     }
   });
+
+
+//6 . Add a new language "Spanish" to the list of languages spoken by the
+//person.
+
+db.test.update(
+    {_id : ObjectId("6406ad65fc13ae5a400000c7")},
+    {
+    $push : {
+        languages : "English"
+    }
+})
   
