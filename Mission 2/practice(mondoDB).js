@@ -8,3 +8,12 @@ db.test.find( {
         $gt : 30
     }
 }).project( {name : 1, email : 1 } )
+
+//2. Find documents where the favorite color is either "Maroon" or "Blue."
+
+db.test.find({
+    $or : [
+        { favoutiteColor : "Maroon" },
+        { favoutiteColor : "Blue" },
+    ]
+})
