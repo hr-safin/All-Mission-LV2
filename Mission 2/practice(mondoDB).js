@@ -17,3 +17,20 @@ db.test.find({
         { favoutiteColor : "Blue" },
     ]
 })
+
+//3. Find all documents where the skill is an empty array.
+
+db.test.find({
+    skills : {
+        $size : 0
+    }
+})
+
+// alternative 
+
+db.test.find({
+    skills : {
+        $exists : true,
+        $eq : []
+    }
+})
