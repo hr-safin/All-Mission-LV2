@@ -69,3 +69,19 @@ db.test.find({
     age : 1,
     gender : 1
 }).sort( { age : 1})
+
+//Logical Query Operator
+
+//1. $and -->  A document is selected only if all specified conditions in the array are true
+
+db.test.find({
+    $and : [
+        { age : {$gt : 20}},
+        {gender : {$in : ["Male", "Female"]}}
+    ]
+}).project({
+    age : 1,
+    gender : 1
+}).sort({
+    age : 1
+})
