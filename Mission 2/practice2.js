@@ -85,3 +85,15 @@ db.test.find({
 }).sort({
     age : 1
 })
+
+//2. $or --> A document is selected if any of the specified conditions in the array are true
+
+db.test.find({
+    $or : [
+        {gender : "Male"},
+        {gender : "Female"}
+    ]
+}).project({
+    gender : 1,
+    age : 1
+})
