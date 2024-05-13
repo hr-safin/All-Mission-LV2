@@ -97,3 +97,15 @@ db.test.find({
     gender : 1,
     age : 1
 })
+
+//3. $not --> A document is selected only if the specified condition is false
+
+db.test.find({
+    $not : {
+        age : {$gt : 17}
+    }
+}).project({
+    age : 1
+}).sort({
+    age : 1
+})
