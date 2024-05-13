@@ -47,3 +47,25 @@ db.test.find({
         $ne : 17
     }
 })
+
+// $in --> selects the document where value of a field equals any value in the specified array
+
+db.test.find({
+    age : { $in :
+        [17,18,19,20,22,24,28]
+    }
+}).project({
+    age : 1,
+    gender : 1
+}).sort( {age : -1})
+
+// $nin --> specified field does not exists
+
+db.test.find({
+    age : {$nin : 
+        [12,13,14,15,16,17,18,20,23,24]
+    }
+}).project({
+    age : 1,
+    gender : 1
+}).sort( { age : 1})
