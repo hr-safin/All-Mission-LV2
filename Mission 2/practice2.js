@@ -109,3 +109,13 @@ db.test.find({
 }).sort({
     age : 1
 })
+
+
+//4. $nor --> A document is selected only if none of the specified conditions in the array are true. (Think of it as an "or" for NOT statements).
+
+db.test.find({
+    $nor : [
+        {age : 17},
+        {gender : "Male"}
+    ]
+})
