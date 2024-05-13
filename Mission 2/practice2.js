@@ -119,3 +119,13 @@ db.test.find({
         {gender : "Male"}
     ]
 })
+
+// nor operator in depth --> the document must fail every conditions for it to be included in the result ( failed both condition)
+
+db.test.find({
+    $nor : [
+        {age : 20},
+        {gender : "Female"}
+    ]
+})
+
