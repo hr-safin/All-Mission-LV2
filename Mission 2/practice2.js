@@ -85,6 +85,17 @@ db.test.find({
 }).sort({
     age : 1
 })
+db.test.find({
+    $and : [
+        { age : {$gt : 20}},
+        {gender : {$in : ["Male", "Female"]}}
+    ]
+}).project({
+    age : 1,
+    gender : 1
+}).sort({
+    age : 1
+})
 
 //2. $or --> A document is selected if any of the specified conditions in the array are true
 
