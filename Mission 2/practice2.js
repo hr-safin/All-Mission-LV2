@@ -97,6 +97,15 @@ db.test.find({
     gender : 1,
     age : 1
 })
+db.test.find({
+    $or : [
+        {gender : "Male"},
+        {gender : "Female"}
+    ]
+}).project({
+    gender : 1,
+    age : 1
+})
 
 //3. $not --> A document is selected only if the specified condition is false
 
