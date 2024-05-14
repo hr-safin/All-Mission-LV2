@@ -39,9 +39,19 @@ db.test.find({
         $lte  :  22
     }
 })
+db.test.find({
+    age : {
+        $lte  :  22
+    }
+})
 
 //$ne --> not equal to
 
+db.test.find({
+    age : {
+        $ne : 17
+    }
+})
 db.test.find({
     age : {
         $ne : 17
