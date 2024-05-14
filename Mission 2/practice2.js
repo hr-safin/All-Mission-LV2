@@ -128,4 +128,10 @@ db.test.find({
         {gender : "Female"}
     ]
 })
+db.test.find({
+    $nor : [
+        {age : 20},
+        {gender : "Female"}
+    ]
+})
 
