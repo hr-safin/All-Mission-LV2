@@ -58,6 +58,14 @@ db.test.find({
     age : 1,
     gender : 1
 }).sort( {age : -1})
+db.test.find({
+    age : { $in :
+        [17,18,19,20,22,24,28]
+    }
+}).project({
+    age : 1,
+    gender : 1
+}).sort( {age : -1})
 
 // $nin --> specified field does not exists
 
