@@ -23,6 +23,11 @@ db.test.find({
         $gte : 20 
     }
 })
+db.test.find({
+    age : {
+        $gte : 20 
+    }
+})
 
 // $le --> less than
 
