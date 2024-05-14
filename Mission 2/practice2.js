@@ -69,6 +69,14 @@ db.test.find({
     age : 1,
     gender : 1
 }).sort( { age : 1})
+db.test.find({
+    age : {$nin : 
+        [12,13,14,15,16,17,18,20,23,24]
+    }
+}).project({
+    age : 1,
+    gender : 1
+}).sort( { age : 1})
 
 //Logical Query Operator
 
