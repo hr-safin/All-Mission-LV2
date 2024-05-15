@@ -6,3 +6,11 @@ db.products.find({
 db.products.find({
     tags: { $elemMatch: { category: "electronics" } }
 })
+
+// $addToSet operator --> 
+
+db.collection.update(
+    { _id: "id" },
+    { $addToSet: { item : "h" } }
+  )
+
