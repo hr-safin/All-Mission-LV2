@@ -68,3 +68,7 @@ db.users.updateOne(
   {id : 342},
   {$pullAll : {languages : ["Bangla","English"]}}
 )
+
+//How to drop collection
+
+db.users.drop()
