@@ -21,3 +21,13 @@ db.collection.update(
     { $set: { age: 23 } }
   )
 
+// $Type --> The $type operator in MongoDB is a query operator used to filter documents based on the data type of a specific field.
+
+
+
+db.users.find({
+  age : {
+    $type : "double"
+  }
+})
+
