@@ -61,3 +61,10 @@ db.users.updateOne(
   {id : 234214},
   {$pull : {items : {product_id : 23423}}}
 )
+
+// pullAll --> the $pullAll operator is specifically designed to remove all occurrences of specified values from an array field within a document.
+
+db.users.updateOne(
+  {id : 342},
+  {$pullAll : {languages : ["Bangla","English"]}}
+)
