@@ -31,3 +31,12 @@ db.users.find({
   }
 })
 
+// $Size --> $size allows you to filter documents based on the number of elements present within a specific array field. 
+// $Size --> Within the aggregation pipeline stages, $size returns the total number of elements in an array produced by a preceding stage.
+
+db.users.find({
+  items : {
+    $size : 2
+  }
+})
+
