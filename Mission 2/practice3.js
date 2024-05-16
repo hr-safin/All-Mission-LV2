@@ -48,3 +48,9 @@ db.users.find({
   }
 })
 
+//Pop --> The $pop operator in MongoDB is used to remove elements from an array field within a document.
+
+db.users.updateOne(
+  {id :  1223},
+  {$pop : {items : -1}}
+)
