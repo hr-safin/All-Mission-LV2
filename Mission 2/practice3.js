@@ -41,6 +41,11 @@ db.users.find({
     $type : "double"
   }
 })
+db.users.find({
+  age : {
+    $type : "double"
+  }
+})
 
 // $Size --> $size allows you to filter documents based on the number of elements present within a specific array field. 
 // $Size --> Within the aggregation pipeline stages, $size returns the total number of elements in an array produced by a preceding stage.
