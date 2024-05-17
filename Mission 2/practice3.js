@@ -6,6 +6,9 @@ db.products.find({
 db.products.find({
     tags: { $elemMatch: { category: "electronics" } }
 })
+db.products.find({
+    tags: { $elemMatch: { category: "electronics" } }
+})
 
 // $addToSet operator --> 
 
