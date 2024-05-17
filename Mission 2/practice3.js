@@ -80,6 +80,10 @@ db.users.updateOne(
   {id :  1223},
   {$pop : {items : -1}}
 )
+db.users.updateOne(
+  {id :  1223},
+  {$pop : {items : -1}}
+)
 
 //pull --> The $pull operator in MongoDB is a versatile tool for removing elements from arrays within documents.
 
