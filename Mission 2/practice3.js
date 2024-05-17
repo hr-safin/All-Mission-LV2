@@ -55,6 +55,11 @@ db.users.find({
     $size : 2
   }
 })
+db.users.find({
+  items : {
+    $size : 2
+  }
+})
 
 //$exists --> The $exists operator in MongoDB is used to check for the existence (or absence) of a field within a document.
 
