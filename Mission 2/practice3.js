@@ -16,6 +16,10 @@ db.collection.update(
     { _id: "id" },
     { $addToSet: { item : "h" } }
   )
+db.collection.update(
+    { _id: "id" },
+    { $addToSet: { item : "h" } }
+  )
 
 // $set --> $set operator is a fundamental tool for updating and creating fields within documents.
 
