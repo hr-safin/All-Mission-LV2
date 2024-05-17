@@ -110,3 +110,4 @@ db.users.updateOne(
 //How to drop collection
 
 db.users.drop()
+db.users.drop()
