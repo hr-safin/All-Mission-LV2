@@ -68,6 +68,11 @@ db.users.find({
     $exists : true
   }
 })
+db.users.find({
+  age : {
+    $exists : true
+  }
+})
 
 //Pop --> The $pop operator in MongoDB is used to remove elements from an array field within a document.
 
