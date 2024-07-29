@@ -56,6 +56,52 @@
 
 
 
+    // Union Types
+
+    type College = "New Jersey Institute Of Technology" | "Northern Arizona University"
+
+    type College2 = "Western New England University" | "Montclair State University"
+
+
+    type NewCollege = College | College2
+
+    const college : College = "New Jersey Institute Of Technology"
+
+
+    type Info = {
+        name : string
+        program : string
+        dream : string
+        college : "Norther University" | "NJIT" | "WNE"
+    }
+
+    const info1 : Info = {
+        name : "Hasibur Rahman Safin",
+        program : "Computer Science",
+        dream : "Software Engineer",
+        college : "NJIT"
+    }
+
+    //Intersection
+
+    type FrontEndDeveloper = {
+        skills : string[]
+        designation1 : "Front End Developer"
+    }
+
+    type BackEndDeveloper = {
+        skills : string[]
+        designation2 : "Backend Developer"
+    }
+
+    type FullStackDevelopers = FrontEndDeveloper & BackEndDeveloper
+
+    const fullstackDevelopers  : FullStackDevelopers = {
+        skills : ["Tailwind CSS", "JavaScript", "React JS", "Express JS", "Mongoose"],
+        designation1 : "Front End Developer",
+        designation2 : "Backend Developer"
+    }
+
 
 
 
