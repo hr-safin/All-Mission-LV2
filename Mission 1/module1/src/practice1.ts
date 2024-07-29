@@ -29,3 +29,23 @@ const getMeterKilo = (value : unknown)  => {
 
 getMeterKilo(3000)
 getMeterKilo("3000")
+
+// Array
+
+const names : string[] = []
+names.push("Safin")
+
+
+// ReadOnly
+const user : readonly string[] = ["Hello", "Safin"]
+
+//Type Inference
+
+const numbers = [1,2,3,4,5]
+numbers.push(6)
+console.log(numbers)
+
+let singleNumber : number = numbers[0]
+
+console.log(singleNumber)
+
