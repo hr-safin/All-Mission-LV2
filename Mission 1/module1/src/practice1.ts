@@ -77,3 +77,25 @@ const nameList = ["safib","Hello"]
 
 const [a,b] = nameList
 console.log(a,b)
+
+
+// Object 
+
+const student1 : {
+    name : string;
+    age : number;
+    college : "New Jersey Institute Of Technology";
+    email? : string  // Optional Property
+} = {
+  name : "Hasibur Rahman Safin",
+  age : 23,
+  college : "New Jersey Institute Of Technology",
+}
+
+//Type Inference in object
+
+const bio = {
+    name : "Hello world"
+}
+
+bio.name = "Hasibur Rahman Safin"
