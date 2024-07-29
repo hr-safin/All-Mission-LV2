@@ -49,3 +49,31 @@ let singleNumber : number = numbers[0]
 
 console.log(singleNumber)
 
+
+//Tuple -- type array and it determine its length and order matter in tuple
+
+let ourTuple : [number, string, undefined];
+
+ourTuple = [12,"sadin",undefined]
+
+
+
+let mixedArray : [number, string, undefined, null]
+mixedArray = [ 12, "safin", undefined, null]
+
+console.log(mixedArray)
+
+const newArray : readonly [number, string, number, boolean] = [5, "safin", 23, true]
+
+console.log(newArray)
+
+//Named Tuple
+
+const namedTuple : [x : number, y: string] = [21301, "safin"]
+
+// Destructuring Tuple 
+
+const nameList = ["safib","Hello"]
+
+const [a,b] = nameList
+console.log(a,b)
