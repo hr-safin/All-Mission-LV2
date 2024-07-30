@@ -70,6 +70,7 @@ console.log(newArray)
 //Named Tuple
 
 const namedTuple : [x : number, y: string] = [21301, "safin"]
+const namedTuple2 : [a : number, b : string] = [2322, "mahi"]
 
 // Destructuring Tuple 
 
@@ -136,3 +137,6 @@ type RollNumber = number
 
 const nam : Nam = "Hasibur Rahman Safin"
 const rollNumber : RollNumber = 21312312
+
+const nam2 : Nam = "Mahi"
+const rollNumber2 : RollNumber = 24131
