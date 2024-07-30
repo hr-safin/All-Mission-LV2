@@ -1,3 +1,4 @@
+{
 // special type 
 
 // any type ---> we should avoid this any type at any cost
@@ -140,3 +141,22 @@ const rollNumber : RollNumber = 21312312
 
 const nam2 : Nam = "Mahi"
 const rollNumber2 : RollNumber = 24131
+
+
+// Union Type
+
+const printStatusCode = (code : string | number | undefined) => {
+
+    console.log(`The status code is ${code}`)
+}
+
+printStatusCode(404)
+printStatusCode("404")
+
+
+
+
+
+
+
+}
