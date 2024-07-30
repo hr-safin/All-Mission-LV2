@@ -26,15 +26,21 @@ const result = kiloMeter(22) as number
 const result2 = kiloMeter("22") 
 
 
-type CustomError = {
-    message : "Something is wrong"
-}
+// type CustomError = {
+//     message : "Something is wrong"
+// }
 
-try{
+// try{
 
-}catch(error){
-    console.log((error as CustomError).message)
-}
+// }catch(error){
+//     console.log((error as CustomError).message)
+// }
+
+let str : unknown = "Hasibur Rahman Safin"
+console.log(str)
+
+let len : number = (str as string).length
+console.log(len)
 
 
 
