@@ -99,3 +99,40 @@ const bio = {
 }
 
 bio.name = "Hasibur Rahman Safin"
+
+// Type Alias
+
+type User = {
+    name : string;
+    age : number;
+    college : string;
+    dream : string
+}
+
+
+const user1 : User = {
+    name : "Hasibur rahman safin",
+    age : 23,
+    college : "New Jersey Institute Of Technology",
+    dream : "go to usa and become a software engineer"
+}
+
+
+const user2 : User = {
+    name : "Nur Al Munira Mahi",
+    age : 22,
+    college : "Montclair State University",
+    dream : "Go to US"
+}
+
+const userList = {
+    ...user1,
+    ...user2
+}
+console.log(userList)
+
+type Nam = string
+type RollNumber = number
+
+const nam : Nam = "Hasibur Rahman Safin"
+const rollNumber : RollNumber = 21312312
