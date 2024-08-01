@@ -15,8 +15,18 @@
     // const bool : boolean[] = [true, false, true]
     const bool : GenericArray2<boolean> = [true, false, true]
 
+    
+    type User = {
+        name : string;
+        age : number
+    }
 
-    const user : GenericArray2<{name : string, age : number}> = [
+    interface User2{
+        name : string;
+        age : number
+    }
+
+    const user : GenericArray2<User2> = [
         {
             name : "hasibur rahman safin",
             age : 24
