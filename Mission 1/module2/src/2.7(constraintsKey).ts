@@ -35,6 +35,7 @@
 
     const result1 = getPropertyValues(user, "name1")
     const result2 = getPropertyValues(car, "brand")
+    const result3 = getPropertyValues(car, "brand")
 
     
 
