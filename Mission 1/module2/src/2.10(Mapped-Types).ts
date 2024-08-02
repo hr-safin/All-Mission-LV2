@@ -24,6 +24,7 @@
 
  //T --> {height: string, weight : number}
  //Key --> T["height"], T["Weight"]
+
  type Height = AreaNumber["height"] // Lookup type
 
  type AreaString<T> = {
@@ -34,6 +35,7 @@
     height : "100",
     weight : 100
  }
+ 
  }
 
 
