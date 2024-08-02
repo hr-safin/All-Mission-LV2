@@ -7,7 +7,28 @@ console.log(str)
 
 let len : number = (str as string).length
 
-console.log(len)
+// console.log(len)
+
+let str2 : unknown = "Hasibur rahman Safin"
+console.log(str2)
+
+let len2 = (str2 as string).length
+console.log(str2)
+
+let num : any = 77
+console.log(num)
+
+//Conversion from any to number
+
+const num1 = <Number> num
+console.log(typeof num1)
+
+let name1 : any = "Hasibur Rahman Safin"
+console.log(name1)
+
+// Conversion from string to number
+let string1 = <String> name1
+console.log(typeof string1)
 
 
 // Interface
