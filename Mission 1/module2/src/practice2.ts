@@ -53,6 +53,60 @@ const rectangle : ColoredRectangle = {
   color : "Blue"
 }
 
+interface Person{
+    name : string;
+    age : number;
+    sex : "male" | "female"
+}
+
+const persons : Person = {
+    name : "Hasibur Rahman Safin",
+    age : 23,
+    sex : "male"
+}
+
+const sex = persons.sex
+console.log(sex)
+
+interface  College{
+    college1 : string;
+    college2 : string;
+    college3 : string
+}
+
+interface NewCollege extends College{
+    college4 : string;
+    college5 : string;
+    college6 : string
+}
+
+const collegeList : NewCollege = {
+    college1 : "New Jersey Institute Of Technology",
+    college2 : "Western New England University",
+    college3 : "Minnesota State University",
+    college4 : "Ohio University",
+    college5 : "Northern arizona university",
+    college6 : "University of Texas at dallas"
+}
+
+console.log(collegeList)
+
+
+// Type Alias
+
+type UserInfo = {
+    name : string;
+    age : number;
+    college : string
+}
+
+const userInfo : UserInfo = {
+    name : "Hasibur Rahman Safin",
+    age : 23,
+    college : "New Jersey Institute Of Technology"
+}
+
+
 // Constraints in generic
 
 const addStudentToCourse = <T extends
