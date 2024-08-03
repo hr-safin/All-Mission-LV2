@@ -144,6 +144,53 @@ const geekForGeeks2 : Geeks2 = {
 }
 
 
+// Intro To Generic
+
+function printData(data : number | string | boolean)  {
+
+    console.log("data :", data)
+
+}
+
+function printData2<T>(data : T){
+    console.log("Data : ", data)
+}
+
+printData2("string")
+printData2(2)
+printData2([1,2,3])
+printData2({ name : "hasibur rahman safin"})
+
+
+function printData3<X,Y>(data1 : X, data2 : Y){
+    console.log(data1, data2)
+}
+
+printData3("hello", 123)
+printData3(23,23)
+
+
+interface UserData<X,Y>{
+    name : X,
+    roll : Y
+}
+
+const userData : UserData<string, number> = {
+    name : "Hasibur Rahman Safin",
+    roll : 223
+}
+
+interface InfoData<X,Y,Z>{
+    name : X,
+    age : Y,
+    roll : Z
+}
+
+const infoData : InfoData<string, number, number> = {
+    name : "Hasibur rahman safin",
+    age : 23,
+    roll : 2333
+}
 
 
 
