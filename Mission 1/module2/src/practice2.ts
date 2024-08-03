@@ -192,6 +192,70 @@ const infoData2 : InfoData<string, number, number> = {
     roll : 2333
 }
 
+// Generic Interface in typescript
+
+function getArray<T>(array : T[]){
+    return array
+}
+
+const arrayOfString = getArray<string>(["safin","hello", "world"])
+console.log(arrayOfString)
+
+function getInfo<X,Y>(name : X, id : Y){
+    return `My name is ${name} and id is ${id}`
+}
+
+const getNameId = getInfo<string, number>("hasibur rahman safin", 21301585)
+console.log(getNameId)
+
+
+// Create a interface
+// interface Props{
+//     name : string;
+//     id : number
+// }
+
+// Generic with interface <T>
+interface Props<T>{
+        name : T[];
+        id : T
+    }
+
+
+    let person : Props<string> = {
+        name : ["hello", "i want to go", "USA"],
+        id : "232332"
+
+    }
+
+    console.log(person)
+
+   // Constraints Generics
+    interface Props2<T extends {id : number}>{
+        data : T[]
+    }
+
+
+    interface objectProps{
+        id : number,
+        name : string,
+        SN : number
+    }
+
+    let customData : Props2<objectProps> = {
+        data : [
+            {
+                id : 213,
+                name : "Hello World",
+                SN : 23232
+            }
+        ]
+    }
+
+    console.log(customData)
+
+
+
 
 
 
