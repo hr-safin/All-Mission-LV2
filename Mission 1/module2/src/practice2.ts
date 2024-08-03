@@ -186,7 +186,7 @@ interface InfoData<X,Y,Z>{
     roll : Z
 }
 
-const infoData : InfoData<string, number, number> = {
+const infoData2 : InfoData<string, number, number> = {
     name : "Hasibur rahman safin",
     age : 23,
     roll : 2333
