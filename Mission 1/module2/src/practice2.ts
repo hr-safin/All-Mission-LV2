@@ -276,6 +276,35 @@ interface Props<T>{
         ]
     }
 
+    interface AddCourse{
+        name : string,
+        id : number,
+        email : string
+
+    }
+
+
+    const addStudentToCourse2 = <T extends AddCourse>( students : T)  => {
+       const course = "Next Level Web Development Course"
+
+       return {
+        ...students,
+        course
+       }
+    }
+
+    const student11 = addStudentToCourse2({
+        name : "Hasibur rahman safin",
+        id : 32323,
+        email : "hello@gmail.com"
+    })
+
+    const student22 = addStudentToCourse2({
+        name : "Nur Al Munira Mahi",
+        id : 23332,
+        email : "hello@gmail.com"
+    })
+
 
 
 
