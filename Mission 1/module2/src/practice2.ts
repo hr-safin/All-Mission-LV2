@@ -230,7 +230,7 @@ interface Props<T>{
 
     console.log(person)
 
-   // Constraints Generics
+   // Constraints Generic
     interface Props2<T extends {id : number}>{
         data : T[]
     }
@@ -253,6 +253,28 @@ interface Props<T>{
     }
 
     console.log(customData)
+
+    interface objectProps2{
+        id : number,
+        name : string,
+        email : string,
+        SN : number
+    }
+
+    interface Props3<T extends {id : number}>{
+        data : T[]
+    }
+
+    const customData2 : Props3<objectProps2> = {
+        data : [
+            {
+                id : 211221,
+                name : "Hasibur rahman safin",
+                email : "s@gmail.com",
+                SN : 32323
+            }
+        ]
+    }
 
 
 
