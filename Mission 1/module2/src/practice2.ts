@@ -106,6 +106,53 @@ const userInfo : UserInfo = {
     college : "New Jersey Institute Of Technology"
 }
 
+// Type VS Interface
+
+type Geeks= {
+    name : string;
+    age : number
+}
+
+type MoreGeeks = {
+    email : string;
+}
+
+type CombineGeeks = Geeks & MoreGeeks
+
+const geekForGeeks : CombineGeeks = {
+    name : "safin",
+    age : 23,
+    email : "safin@gmail.com"
+}
+
+console.log(geekForGeeks)
+
+
+interface Geeks2{
+    name : string;
+    age : number;
+}
+
+interface Geeks2{
+    email : string;
+}
+
+const geekForGeeks2 : Geeks2 = {
+    name : "ssss",
+    age : 33,
+    email : "3w433@gmail.com"
+}
+
+
+
+
+
+
+
+
+
+
+
 
 // Constraints in generic
 
