@@ -332,16 +332,32 @@ interface Props<T>{
 
 
 
-
-
-
-
-
-
-
-
-
 // Constraints in generic
+
+// lets create an interface
+
+interface CommonInfo{
+    name : string,
+    age : number,
+    email : string
+}
+
+const addToCourse = <T extends CommonInfo>(student : T) => {
+   
+    const course = "Next Level Web Development Course"
+    const dream = "I want to go to USA insha Allah soon"
+    return {
+        ... student,
+        course,
+        dream
+    }
+}
+
+const studentNo1 = addToCourse({
+    name : "Hasibur rahman Safin",
+    age : 23,
+    email : "hs@gmail.com"
+})
 
 const addStudentToCourse = <T extends
 {name : string, id : number, email : string}
@@ -382,6 +398,25 @@ const student3 = addStudentToCourse(
    emni : "emni"
 
    })
+
+interface Length{
+    length : number
+}
+const whatIsLength = <T extends Length>(a : T, b : T) => {
+    if(a.length > b.length){
+        return("A is larger than B")
+    }
+    else if(a.length === b.length){
+        return("Both are same length")
+    }
+    else{
+        return("A is smaller than B")
+    }
+}
+
+const determineTheLength = whatIsLength("ss","ssss")
+console.log(determineTheLength)
+const determineTheLength2 = whatIsLength([12,2],[34])
 
 
 
