@@ -417,6 +417,47 @@ const whatIsLength = <T extends Length>(a : T, b : T) => {
 const determineTheLength = whatIsLength("ss","ssss")
 console.log(determineTheLength)
 const determineTheLength2 = whatIsLength([12,2],[34])
+console.log(determineTheLength2)
+
+// Constraint Keyof with generic
+
+type Owner = "Bike" | "Car" | "Ship" // Manually
+
+type Vehicles = {
+    Bike : string,
+    Car : string,
+    Ship : string
+}
+
+type Owner2 = keyof Owner
+type Owner3 = keyof Vehicles
+
+const owner : Owner3 = "Car"
+
+
+const getPropertyValues = <X, Y extends keyof X>(obj : X, key : Y) => {
+    return obj[key]
+}
+
+
+
+const user = {
+    name : "Hasibur Rahman Safin",
+    age : 23,
+    email : "34343@gmail.com"
+}
+
+const user2 = {
+    name : "Nur Al Munira Mahi",
+    age : 21,
+    email : "344@gmail.com222"
+}
+
+
+const getProperty1 = getPropertyValues(user, "name")
+console.log(getProperty1)
+const getProperty2 = getPropertyValues(user2, "email")
+console.log(getProperty2)
 
 
 
