@@ -459,6 +459,24 @@ console.log(getProperty1)
 const getProperty2 = getPropertyValues(user2, "email")
 console.log(getProperty2)
 
+function identity<T extends number>(args : T) : T{
+    return args
+}
+console.log(identity(212112))
+
+
+interface Person11{
+    name : string,
+    age : number,
+    email : string
+}
+
+type PersonKeys = keyof Person11
+
+const getKeys = <X,Y extends keyof X>(obj : X, key : Y) => {
+    return obj[key]
+}
+
 
 
 
