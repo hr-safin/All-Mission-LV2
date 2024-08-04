@@ -286,10 +286,12 @@ interface Props<T>{
 
     const addStudentToCourse2 = <T extends AddCourse>( students : T)  => {
        const course = "Next Level Web Development Course"
+       const hello = "hello students"
 
        return {
         ...students,
-        course
+        course,
+        hello
        }
     }
 
