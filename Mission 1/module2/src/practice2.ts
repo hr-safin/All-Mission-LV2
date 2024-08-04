@@ -200,6 +200,8 @@ function getArray<T>(array : T[]){
 
 const arrayOfString = getArray<string>(["safin","hello", "world"])
 console.log(arrayOfString)
+const arrayOfNumber = getArray<number>([1,2,34])
+console.log(arrayOfNumber)
 
 function getInfo<X,Y>(name : X, id : Y){
     return `My name is ${name} and id is ${id}`
@@ -306,6 +308,27 @@ interface Props<T>{
         id : 23332,
         email : "hello@gmail.com"
     })
+
+    // Function with generic
+
+    const createArrayGeneric = <T>(params : T) : T[] => {
+        return [params]
+    }
+
+    const createArrayOfString = createArrayGeneric<string>("Hasibur Rahman Safin")
+    const createArrayOfNumber = createArrayGeneric<number>(12)
+
+    // Tuple
+
+    const createArrayGenericTuple = <X,Y>(params1 : X, params2 : Y) : [X,Y] => {
+        return [params1, params2]
+    }
+
+    const createArrayOfTupleNumber = createArrayGenericTuple<number, number>(1, 12)
+
+    const createArrayOfTupleString = createArrayGenericTuple<string, string>(
+        "hasibur rahman safin", "dddd"
+    )
 
 
 
