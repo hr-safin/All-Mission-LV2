@@ -309,6 +309,12 @@ interface Props<T>{
         email : "hello@gmail.com"
     })
 
+    const student33 = addStudentToCourse({
+        name : "nnjjjj",
+        id : 33232,
+        email : "444@gmail.com"
+    })
+
     // Function with generic
 
     const createArrayGeneric = <T>(params : T) : T[] => {
