@@ -478,6 +478,9 @@ const getKeys = <X,Y extends keyof X>(obj : X, key : Y) => {
 }
 
 
+const nam = getKeys(user, "name")
+
+
 
 
 
