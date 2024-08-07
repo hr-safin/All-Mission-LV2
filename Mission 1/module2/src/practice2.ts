@@ -121,6 +121,7 @@ type Geeks= {
     age : number
 }
 
+
 type MoreGeeks = {
     email : string;
 }
@@ -133,6 +134,7 @@ const geekForGeeks : CombineGeeks = {
     email : "safin@gmail.com"
 }
 
+console.log(geekForGeeks)
 console.log(geekForGeeks)
 
 
