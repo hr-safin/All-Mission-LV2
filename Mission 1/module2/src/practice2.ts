@@ -102,6 +102,11 @@ type UserInfo = {
     age : number;
     college : string
 }
+type UserInfo2 = {
+    name : string;
+    age : number;
+    college : string
+}
 
 const userInfo : UserInfo = {
     name : "Hasibur Rahman Safin",
