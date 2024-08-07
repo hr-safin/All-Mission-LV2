@@ -78,7 +78,8 @@ interface  College{
 interface NewCollege extends College{
     college4 : string;
     college5 : string;
-    college6 : string
+    college6 : string,
+    college7 : string
 }
 
 const collegeList : NewCollege = {
@@ -87,7 +88,8 @@ const collegeList : NewCollege = {
     college3 : "Minnesota State University",
     college4 : "Ohio University",
     college5 : "Northern arizona university",
-    college6 : "University of Texas at dallas"
+    college6 : "University of Texas at dallas",
+    college7 : "University of people"
 }
 
 console.log(collegeList)
