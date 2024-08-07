@@ -4,6 +4,7 @@
 
 let str : unknown = "I am Hasibur Rahman Safin"
 console.log(str)
+console.log(str)
 
 let len : number = (str as string).length
 
@@ -309,7 +310,7 @@ interface Props<T>{
         email : "hello@gmail.com"
     })
 
-    const student33 = addStudentToCourse({
+    const student33 = addStudentToCourse2({
         name : "nnjjjj",
         id : 33232,
         email : "444@gmail.com"
