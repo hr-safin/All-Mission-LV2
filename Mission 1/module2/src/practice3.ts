@@ -75,6 +75,47 @@
     voidFunc("Hasibur Rahman Safin")
 
 
+    // Type vs Interface
+
+    type Safin = {
+        name1 : string
+    }
+
+    type Mahi ={
+        name2 : string
+    }
+
+    type Marry = Safin & Mahi
+
+    const marry : Marry = {
+        name1 : "Hasibur Rahman Safin",
+        name2 : "Nur Al Munira Mahi"
+    }
+
+    console.log(marry)
+
+    interface Geeks{
+        email : string
+    }
+
+    interface Geeks{
+        id : number
+    }
+
+    const info : Geeks = {
+        email : "ss@gmail",
+        id : 3322
+    }
+
+     type mufu = (param1 :  number, param2 : number) => number
+    interface myFunc{
+        (param1 :number, param2 : number) : number
+    }
+
+    // with Interface we use Extends
+    // With type we use intersection
+
+
 
 
 
