@@ -175,6 +175,35 @@
     }]
 
 
+    // Generic With Interface
+
+    const getArray =<T>(arr : T[]) => {
+        return arr
+    }
+
+    const numberArray = getArray<number>([1,2,3,4])
+    const stringArray = getArray<string>(["safin", "hello", "wasif"])
+
+
+    const getNameEmail = <T,X>(name : T, email : X) => {
+        return `My name is ${name} and my email is ${email}`
+    }
+
+    const nameEmail = getNameEmail("hasibur","hr@gmail.com")
+
+
+    interface Props<T>{
+        name : T[],
+        id : number
+    }
+
+
+    const importantInfo : Props<string> =  {
+        name : ["safin", "heloo"],
+        id : 23232
+    }
+
+
 
 
 
