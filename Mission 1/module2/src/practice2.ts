@@ -1,5 +1,18 @@
 {
 
+    // Type Alias
+
+    type StudentInfo = {
+        name : "Hasibur Rahman Safin",
+        age : 23,
+        email : "safin@gmail.com",
+        id : 21301585
+    }
+
+    type Id = number
+
+    const id : Id = 2111
+
 // Type Assertion
 
 let str : unknown = "I am Hasibur Rahman Safin"
