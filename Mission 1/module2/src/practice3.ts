@@ -202,6 +202,10 @@
         name : ["safin", "heloo"],
         id : 23232
     }
+    const importantInfo2 : Props<string> =  {
+        name : ["safin", "heloo"],
+        id : 23232
+    }
 
 
 
