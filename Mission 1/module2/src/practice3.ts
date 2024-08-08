@@ -116,6 +116,67 @@
     // With type we use intersection
 
 
+    // Generic
+
+    function identity<T>(arg : T) : T {
+        console.log(`the type of the value can be anything ${arg}`)
+        return arg
+    }
+
+    const output = identity<string>("232")
+    console.log(output)
+
+
+    type GenericArray = Array<string | boolean | number>
+    type GenericArray2<T> = Array<T>
+
+    const arrayOfNumber : GenericArray2<number> = [1,2,3,3]
+
+    interface User{
+        name : string,
+        age : number,
+        email : string
+    }
+
+    const arrayOfObject : GenericArray2<User>= [
+        {
+            name : "Hasibur",
+            age : 23,
+            email : "34343"
+        },
+        {
+            name : "munira",
+            age : 24,
+            email : "34343"
+        }
+    ]
+
+
+    // Generic in tuple
+
+    type GenericTuple<X,Y> = [X,Y]
+    type NameEmail = {
+        name : string,
+        email : string,
+    }
+
+    type Age = NameEmail & {age : number}
+
+    const infoArray : GenericTuple<string, number> = ["safin",23]
+    const infoOfObject : GenericTuple<number, NameEmail> = [12, {
+        name : "Hasibur",
+        email : "34343"
+    }]
+
+    const infoOfObject2 : GenericTuple<number, Age> = [12, {
+        name : "dss",
+        email : "33343",
+        age : 23
+    }]
+
+
+
+
 
 
 
