@@ -66,6 +66,14 @@
         str : "Hello World, I am hasibur rahman safin"
     }
 
+    // Void Function --> does not return any value
+
+    function voidFunc(name : string) : void{
+        console.log(`My name is ${name}`)
+    }
+
+    voidFunc("Hasibur Rahman Safin")
+
 
 
 
