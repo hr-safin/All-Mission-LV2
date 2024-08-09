@@ -278,6 +278,49 @@
     let numberElement = arrayElement<number>([1,3,3,4,4,4])
     let stringElement = arrayElement<string>(["hello", "world", "safin"])
 
+    //Constraints in generic
+
+    interface StudentInfo{
+        name : string,
+        age : number,
+        email : string,
+        id : number,
+        goal : string,
+        college : string
+    }
+
+
+    const enrolledInfo = <T extends StudentInfo>(student : T) => {
+        const course = "Next Level Web Development"
+
+        return {
+            ...student,
+            course
+        }
+    }
+
+    const student1 =  enrolledInfo(
+        {
+            name : "Hasibur rahman Safin",
+            age : 23,
+            email : "333",
+            id : 2332,
+            goal :"USA",
+            college : "NJIT"
+        }
+    )
+
+    const student2 = enrolledInfo(
+        {
+            name : "Hasibur Rahman Safin",
+            age : 22,
+            email : "3dsfs",
+            id : 23232,
+            goal : "USA",
+            college : "Western New England University"
+        }
+    )
+
 
 
 
