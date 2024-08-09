@@ -208,6 +208,52 @@
     }
 
 
+    // Function With Generic
+    const createArray = <T>(params : T) : T[] => {
+        return [params]
+    }
+
+    const createArrayString = createArray<string>("hasibur rahman safin")
+    const  createArrayNumber = createArray<number>(12)
+
+
+    const createArrayWithGeneric = <T>(params : T) : T[] => {
+        return [params]
+    }
+
+    interface UserInfo{
+        name : string,
+        age : number,
+        email : string,
+        id : number,
+        goal : string
+    }
+
+    const createArrayOfObject = createArrayWithGeneric<UserInfo>(
+        {
+            name : "Hasibur Rahman Safin",
+            age : 23,
+            email : "ss@gmail.com",
+            id : 23323,
+            goal : "Want to go to USA"
+        }
+    )
+
+    // Tuple
+
+    const createWithTuple = <T,X>(params1 : T, params2 : X) : [T,X] => {
+        return [params1, params2]
+    }
+
+    const tupleArray = createWithTuple<string, number>("NJIT", 2323)
+
+    function independent<T>(arg : T) : T {
+        return arg
+    }
+
+    const shadinBangladesh = independent<string>("Bangladesh Become independent for two time on 5th august")
+
+
 
 
 
