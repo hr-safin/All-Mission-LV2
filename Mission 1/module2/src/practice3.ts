@@ -254,6 +254,32 @@
     const shadinBangladesh = independent<string>("Bangladesh Become independent for two time on 5th august")
 
 
+    function mergeArray<T,X>(arr1 : T[], arr2 : X[]) : (T | X)[] {
+        return [...arr1, ...arr2]
+    }
+
+    const numb : number[] = [1,2,3,4,5,6]
+    const words : string[] = ["hello", "wasif", "bangladesh"]
+
+    const twoArray : (number | string)[] = mergeArray<number, string>(numb, words)
+
+    const mergeArray2 = <T,X>(arr1: T[], arr2 : X[]) : (T | X)[] => {
+        return [...arr1, ...arr2]
+    }
+
+    const twoArray2 = mergeArray2<number, string>([1,2,3,3],["helo","wasif", "safin"])
+
+    function arrayElement<T>(arr : T[]) : void {
+        for(const x of arr){
+            console.log(x)
+        }
+    }
+
+    let numberElement = arrayElement<number>([1,3,3,4,4,4])
+    let stringElement = arrayElement<string>(["hello", "world", "safin"])
+
+
+
 
 
 
