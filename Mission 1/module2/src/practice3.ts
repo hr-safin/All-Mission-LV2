@@ -322,8 +322,39 @@
     )
 
 
+    // Constraints Keyof
 
+    function get<T>(obj : T, key : keyof T){
+        return obj[key]
+    }
 
+    const collegeName  = get({college : "NJIT",age : 23}, "college")
+    console.log(collegeName)
+
+    
+    function get2<T, Key extends keyof T>(obj : T, key : Key) {
+        return obj[key]
+    }
+
+    const collegeName2 = get2({collegeName : "MSU", id : 2323}, "id")
+
+    
+
+    //type PersonsList = "John" | "Doe" | "hello"
+
+    interface Person{
+        name : string,
+        age  : number,
+        address : string
+    }
+
+    type PersonKey = keyof Person // name | age | address
+
+    const getProperty = <T, K extends keyof T>(obj : T, key : K) : T[K] => {
+        return obj[key]
+    }
+
+    const getName = getProperty({name : "helloWorld"}, "name")
 
 
 
