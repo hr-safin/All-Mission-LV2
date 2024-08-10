@@ -355,6 +355,7 @@
     }
 
     const getName = getProperty({name : "helloWorld"}, "name")
+    const getEmail = getProperty({email : "sss"}, "email")
 
 
 
