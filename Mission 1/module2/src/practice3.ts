@@ -581,6 +581,24 @@
 
     type AgeByCity = Record<string, number>
 
+    //Custom Utility type
+
+    type NullableType<T> = {
+        [K in keyof T] : T[K] | null
+    }
+
+    type NullableType2<T> = {
+        [K in keyof T] : T[K] | null
+    }
+
+    interface NormalUser3{
+        name : string,
+        age : string,
+        address : string
+    }
+
+    type NullTypeUnion = NullableType<NormalUser3>
+
 
 
 
