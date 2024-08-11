@@ -359,6 +359,86 @@
 
 
 
+    // Async / await in typescript
+
+    async function myFunction() : Promise<void> {
+        try{
+            const result = await myFunction()
+
+        }catch(err){
+            console.log(err)
+        }
+    }
+
+    // Function Returning the promise
+
+    function fetchData() : Promise<string>{
+        return new Promise((resolve,reject) => {
+            setTimeout(() => {
+                resolve("Async Data Has been fetched")
+            },2000)
+        })
+    }
+
+    //Async function using await to handle the promise
+
+    async function fetchDataAsync() : Promise<void>{
+        try{
+            const result = await fetchData()
+            console.log(result)
+        }
+        catch(error){
+            console.log(`The error is ${error}`)
+        }
+    }
+
+    
+
+
+
+    const fetchingData = () : Promise<string> => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("Async data has been fetched")
+            },2000)
+        })
+    }
+
+
+    const fetchingDataAsync = async() : Promise<void> => {
+        try{
+            const result = await fetchingData()
+            console.log(result)
+        }catch(error){
+            console.error(`The error is ${error}`)
+        }
+    }
+
+
+    fetchingDataAsync()
+
+    type Todo = {
+        id : number,
+        userId : number,
+        title : string,
+        completed : boolean
+    }
+
+    const getUser = async() : Promise<Todo> => {
+        
+            const response = await fetch("https://jsonplaceholder.typicode.com/todos/1")
+            const data = await response.json()
+            return data
+    }
+
+    const getData = async() => {
+        const data = await getUser()
+        console.log(data)
+    }
+
+    getData()
+
+
 
 
 
