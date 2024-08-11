@@ -504,7 +504,20 @@
         name : "Hasibur Rahman Safin"
     }
 
-    
+    type AreaString<T> = {
+        [K in keyof T] : T[K]
+    }
+
+    const areaString : AreaString<{height : string, weight : string}> = {
+        height : "3333",
+        weight  : "eee"
+    }
+
+    // Lookup type
+
+    type LookForName = NormalUser["name"]
+    type LookForAge = NormalUser["age"]
+    type LookForAddress = NormalUser["address"]
 
 
 
