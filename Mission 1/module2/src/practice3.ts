@@ -520,6 +520,29 @@
     type LookForAddress = NormalUser["address"]
 
 
+    // Conditional Type with mapped type
+
+    interface UserWithOptionalEmail{
+        name : string,
+        age : string,
+        email? : string
+    }
+
+    type UserWithRequiredEmail = {
+        [P in keyof UserWithOptionalEmail as P extends "email" ? "requiredEmail" : P] : P extends "email" ? string : UserWithOptionalEmail[P]
+    }
+
+    type UserWithRequiredEmail2 = {
+        [P in keyof UserWithOptionalEmail as P extends "email" ? "requiredEmail" : P] : P extends "email" ? string : UserWithOptionalEmail[P]
+    }
+
+    const requireEmail : UserWithRequiredEmail = {
+        name : "hasibur rahman safin",
+        age : "32",
+        requiredEmail : "saifn@gmail.com"
+    }
+
+
 
 
 
