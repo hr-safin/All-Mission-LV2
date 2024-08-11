@@ -569,6 +569,18 @@
 
     type ReadOnlyType = Readonly<UserNormal>
 
+    // Pick Type<T,K>
+
+    type UserNameAge = Pick<NormalUser, "name" | "address">
+
+    //Omit Type<T,K>
+
+    type OmitType = Omit<NormalUser, "age">
+
+    // Record Type<T,K>
+
+    type AgeByCity = Record<string, number>
+
 
 
 
