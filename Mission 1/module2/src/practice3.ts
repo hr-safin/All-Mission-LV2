@@ -542,6 +542,34 @@
         requiredEmail : "saifn@gmail.com"
     }
 
+    // Utility type are pre-defined type
+
+    //---> Partial type
+    interface UserNormal{
+        name : string,
+        age : string,
+        id : string,
+        email : string
+    }
+
+    type PartialType = Partial<UserNormal>
+
+    //----> Required Type
+
+    interface UserNormal2{
+        name? : string,
+        age? : string,
+        id? : string,
+        email? : string
+    }
+
+    type RequiredType = Required<UserNormal2>
+
+    //ReadOnly type
+
+    type ReadOnlyType = Readonly<UserNormal>
+
+
 
 
 
