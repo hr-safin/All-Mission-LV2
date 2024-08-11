@@ -436,7 +436,35 @@
         console.log(data)
     }
 
-    getData()
+    //getData()
+
+    // Conditional type
+
+    // type TypeName<T> = T extends Condition ? trueType : falseType
+
+    //NonNullable Type
+
+    type NonNullable<T> = T extends  null | undefined ? never : T
+    type NonNullable2<T> = T extends null | undefined ? never : T
+
+
+    let x : string | number | null | undefined;
+    let y : NonNullable<typeof x>
+
+    type PromiseOrString<T> = T extends Promise<infer U> ? U : T
+    type A = PromiseOrString<string | Promise<number>>
+
+
+    type Fancy = {
+        car : string,
+        bike : string,
+        ship : string
+    }
+    type checkVehicle<T> = T extends "car" | "bike" | "ship" ? true : false
+    type checkVehicle2<T> = T extends keyof Fancy ? true : false
+
+    type hasBike = checkVehicle2<"bike">
+    type HasShip = checkVehicle2<"ship">
 
 
 
