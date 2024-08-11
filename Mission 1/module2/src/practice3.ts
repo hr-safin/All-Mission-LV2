@@ -466,6 +466,46 @@
     type hasBike = checkVehicle2<"bike">
     type HasShip = checkVehicle2<"ship">
 
+    // Mapped Type
+
+    const arrayOfNum : number[] = [1,2,3,4,5]
+
+    const makeArrayString : string[] = arrayOfNum.map((number) => number.toString())
+    console.log(makeArrayString)
+
+
+    // type NewType<T> = {
+    //     [P in keyof T] : Transformation
+    // }
+
+
+    interface NormalUser{
+        name : string,
+        age : number,
+        address : string
+    }
+
+
+    type OptionalUser = {
+        [P in keyof NormalUser]? : NormalUser[P] // optional type with same property
+    }
+
+    type ChangeTheType = {
+        [P in keyof NormalUser] : string
+    }
+
+    const changeType : ChangeTheType = {
+        name : "Hasibur Rahman Safin",
+        age : "number two",
+        address : "Rampura hello world"
+    }
+
+    const optionalUser : OptionalUser = {
+        name : "Hasibur Rahman Safin"
+    }
+
+    
+
 
 
 
