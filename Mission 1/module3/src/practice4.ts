@@ -17,6 +17,8 @@
         }
     }
 
+    const hello = new Hello("s", 23, "ss")
+
 
 
 
