@@ -39,7 +39,7 @@
     // poorManAccount.addDeposite(300) // we r using like function
     // poorManAccount.showBalance()
    
-    poorManAccount.addDeposite = 500
+    poorManAccount.addDeposite = 600
     const myBalance = poorManAccount.Balance // We e using as a property
     console.log(myBalance, "Taka")
     
