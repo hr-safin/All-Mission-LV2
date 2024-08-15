@@ -28,6 +28,10 @@
             return this._balance
         }
 
+        get NoBalance(){
+            return "Hello"
+        }
+
         // showBalance(){
         //     console.log(`The Balance is ${this._balance} Taka`)
         // }
