@@ -79,6 +79,41 @@
     const area1 = new Square(12)
     console.log(area1)
     console.log(area1.getArea())
+
+
+    // More example of inheritance
+
+    class Person{
+        name : string
+        age : number
+        address : string
+
+        constructor(name : string, age : number, address : string){
+            this.name = name
+            this.age = age
+            this.address = address
+        }
+
+        sleepTime(hr : number){
+            console.log(`${this.name} sleeps ${hr} hours everyday`)
+        }
+    }
+
+
+    class Student extends Person{
+        subject : string
+        constructor(name : string, age : number, address : string,subject : string){
+            super(name, age, address)
+            this.subject = subject
+        }
+
+        haveClass(many : number){
+            console.log(`${this.name} has ${many} classes today`)
+        }
+    }
+
+    const student1 = new Student("Hasibur Rahman Safin",24, "Rampura Mohanagar Project", "Computer Science")
+    console.log(student1)
     
 
 
