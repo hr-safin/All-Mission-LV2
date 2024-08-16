@@ -114,6 +114,53 @@
 
     const student1 = new Student("Hasibur Rahman Safin",24, "Rampura Mohanagar Project", "Computer Science")
     console.log(student1)
+
+    // type guard using typeof and in
+
+    const greet = (name : string | number) => {
+        if(typeof name === "string" ){
+            console.log(`hello, ${name.toUpperCase()}`)
+        }
+        else{
+            console.log(`hello, ${name}`)
+        }
+    }
+
+    greet("Hasibur")
+    greet(32)
+
+    // In Guard
+
+    type NormalUser = {
+        name : string
+    }
+
+    type AdminUser = {
+        name : string,
+        role : string
+    }
+
+    const getUser = (user : NormalUser | AdminUser) => {
+        if("role" in user){
+            console.log(`My name is ${user.name} and his role is ${user.role}`)
+        }
+        else{
+            console.log(`My name is ${user.name} and he is a normal user`)
+        }
+    }
+
+
+    const normalUser : NormalUser = {
+        name : "Jonson"
+    }
+
+    const adminUser : AdminUser = {
+        name : "Safin",
+        role : "ADMIN"
+    }
+
+    getUser(normalUser)
+    getUser(adminUser)
     
 
 
