@@ -243,6 +243,79 @@
 
     displayVehicleInfo(car)
     displayVehicleInfo(truck)
+
+    //Access Modifiers
+
+    // Public Modifiers
+
+    class Animals{
+        public name : string;
+        constructor(name : string){
+            this.name = name
+        }
+
+        makeSounds(){
+            console.log("HAHAHHAHA")
+        }
+    }
+
+    const animal1 = new Animals("dog")
+    console.log(animal1.name)
+    animal1.makeSounds()
+
+
+    class StudentAccount{
+        public id : number;
+        public name : string;
+        private _balance : number
+
+        constructor(id : number, name : string, _balance : number){
+            this.id = id
+            this.name = name
+            this._balance = _balance
+        }
+
+        addDeposite(amount : number){
+            this._balance = this._balance + amount
+        }
+    }
+
+    const studentAccount1 = new StudentAccount(2121, "Safin", 100)
+    console.log(studentAccount1)
+    studentAccount1.addDeposite(500)
+    console.log(studentAccount1)
+
+    class BankAccount{
+        public id : number;
+        public name : string;
+        protected _balance : number
+
+        constructor(id : number, name : string, _balance : number){
+            this.id = id
+            this.name = name
+            this._balance = _balance
+        }
+
+        addDeposite(amount : number){
+            this._balance = this._balance + amount
+        }
+        showBalance(){
+            console.log(`The total balance is ${this._balance}`)
+        }
+    }
+
+    class TeacherAccount extends BankAccount{
+        public constructor(id : number, name : string, _balance : number ){
+            super(id, name, _balance)
+        }
+    }
+
+    const teaceher1 = new TeacherAccount(2311, "Mokless", 50000)
+    console.log(teaceher1)
+
+    teaceher1.addDeposite(50000)
+    console.log(teaceher1)
+
     
 
 
@@ -252,4 +325,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+    
 }
+
+
