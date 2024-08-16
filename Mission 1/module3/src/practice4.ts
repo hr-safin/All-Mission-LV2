@@ -296,7 +296,9 @@
             this._balance = _balance
         }
 
-        addDeposite(amount : number){
+        //Setter
+
+        set addDeposite(amount : number){
             this._balance = this._balance + amount
         }
         showBalance(){
@@ -313,8 +315,31 @@
     const teaceher1 = new TeacherAccount(2311, "Mokless", 50000)
     console.log(teaceher1)
 
-    teaceher1.addDeposite(50000)
+    teaceher1.addDeposite= 50000
     console.log(teaceher1)
+
+    //Getter and Setter
+
+    class Studant{
+        private name : "Hasibur Rahman Safin";
+        private age : number;
+        private address : string
+        constructor(name : "Hasibur Rahman Safin", age : number, address : string){
+            this.name = name
+            this.age = age
+            this.address = address
+        }
+
+        //getter ---> we call it accessor as well
+
+        get showName(){
+            return this.name
+        }
+    }
+
+    let student = new Studant("Hasibur Rahman Safin", 24, "Mohanagar")
+
+    console.log(student.showName)
 
     
 
