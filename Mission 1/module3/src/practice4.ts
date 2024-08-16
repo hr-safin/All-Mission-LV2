@@ -296,7 +296,7 @@
             this._balance = _balance
         }
 
-        //Setter
+        //Setter -----> we can call it as mutator
 
         set addDeposite(amount : number){
             this._balance = this._balance + amount
