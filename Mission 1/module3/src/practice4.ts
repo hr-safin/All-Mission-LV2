@@ -161,6 +161,88 @@
 
     getUser(normalUser)
     getUser(adminUser)
+
+
+    // Type Guard using instance of 
+
+
+    class Animal{
+        name : string
+
+        constructor(name : string){
+            this.name = name
+        }
+    }
+
+    class Dog extends Animal{
+        breed : string
+        constructor(name : string, breed : string) {
+            super(name)
+            this.breed = breed
+        }
+    }
+
+    class Cat extends Animal{
+        color : string
+        constructor(name : string, color : string){
+            super(name)
+            this.color = color
+        }
+    }
+
+
+    const displayInfo = (animal : Dog | Cat) => {
+        if(animal instanceof Dog){
+            console.log(`The dog name is ${animal.name} and breed is ${animal.breed}`)
+        }
+        else{
+            console.log(`The cat name is ${animal.name} and color is ${animal.color}`)
+        }
+    }
+
+    const dog = new Dog("Mighty", "small")
+    console.log(dog)
+    const cat = new Cat("Cutu", "Brown")
+    console.log(cat)
+
+    //Creating custom type guard
+
+    interface Car{
+        make : string;
+        model : string
+    }
+
+    interface Truck{
+        make : string;
+        capacity : string
+    }
+
+    function isCar(vehicle : Car | Truck) : vehicle is Car{
+        return "model" in vehicle
+    }
+
+    function displayVehicleInfo(vehicle : Car | Truck){
+        if(isCar(vehicle)){
+            console.log(`The car is made by ${vehicle.make} and model is ${vehicle.model}`)
+        }else{
+            console.log(`The truck is made by ${vehicle.make} and capacity is ${vehicle.capacity} `)
+        }
+    }
+
+
+    const car : Car = {
+        make : "Germany",
+        model : "S series"
+
+    }
+
+    const truck : Truck = {
+        make :  "Austrailia",
+        capacity : "10 tone"
+    }
+
+    displayVehicleInfo(car)
+    displayVehicleInfo(truck)
     
 
 
