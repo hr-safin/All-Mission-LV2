@@ -22,6 +22,8 @@
     const hello1 = new Hello("s", 23, "ss")
     
     const hello2 = new Hello("s", 23, "ss")
+    
+    const hello3 = new Hello("s", 23, "ss")
 
 
 
