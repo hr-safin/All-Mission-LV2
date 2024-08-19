@@ -52,6 +52,7 @@
             for(let str of spitArr){
                 if(typeof str === "string"){
                     const firstLetterUpper = str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()
+                    
                     newArr.push(firstLetterUpper)
                   
                 } 
