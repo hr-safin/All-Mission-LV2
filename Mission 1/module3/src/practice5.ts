@@ -144,6 +144,66 @@
     driveVehicle(bike)
 
 
+    // Abstraction ---> interface -- abstract class
+
+
+    interface Details{
+        study() : void
+        sleep() : void
+    }
+
+    class Student1 implements Details{
+        study(): void {
+            console.log("Student-1 studies for 8 hours everyday")
+        }
+
+        sleep(): void {
+            console.log("Student-1 sleeps 7 hours a day")
+        }
+    }
+
+    class Student2 implements Details{
+        study(): void {
+            console.log("Student-2 studies for 6 hours everyday")
+        }
+
+        sleep(): void {
+            console.log("Student-2 sleeps 9 hours a day")
+        }
+    }
+
+    const student1 = new Student1()
+
+    console.log("------------------Abstraction-------------------")
+    student1.study()
+
+    // Abstract class
+
+
+    abstract class File{
+        abstract pdf() : void
+        abstract jpg() : void
+    }
+
+
+    class Document1 extends File{
+        pdf(): void {
+            console.log("The file is in pdf format")
+        }
+
+        jpg(): void {
+            console.log("The file is in jpg format")   
+        }
+    } 
+
+
+    const document1 = new Document1()
+    document1.jpg()
+
+
+
+
+
 
 
 
