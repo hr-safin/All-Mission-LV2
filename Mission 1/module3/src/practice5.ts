@@ -229,7 +229,7 @@
         }
     }
 
-    const deposit = new BankAccount(200)
+    const deposit = new BankAccount(300)
     const withdraw = new BankAccount(100)
     console.log(deposit)
     console.log(withdraw)
