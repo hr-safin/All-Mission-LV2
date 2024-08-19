@@ -201,6 +201,40 @@
     document1.jpg()
 
 
+    // Encapsulation in typescript
+
+    class BankAccount{
+        private _balance : number;
+
+        constructor(_balance : number){
+            this._balance = _balance
+        }
+
+        private deposit(amount : number){
+            
+            if(amount > 0){
+                this._balance += amount
+            }else{
+                console.log("Deposit amount must be positive")
+            }
+        }
+
+        private withdraw(amount : number){
+            if(amount < this._balance){
+                this._balance -+ amount
+            }
+            else{
+                console.log("Insufficient balance please deposit")
+            }
+        }
+    }
+
+    const deposit = new BankAccount(200)
+    const withdraw = new BankAccount(100)
+    console.log(deposit)
+    console.log(withdraw)
+
+
 
 
 
