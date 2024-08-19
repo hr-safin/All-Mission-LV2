@@ -65,6 +65,84 @@
 
     console.log(capital)
 
+    // Polymorphism in typescript
+
+    interface Shape{
+        area() : number
+    }
+
+    class Circle implements Shape{
+        radius : number
+        constructor(radius : number){
+            this.radius = radius
+        }
+
+        area(): number {
+            return  Math.PI * this.radius * this.radius
+        }
+    }
+
+    class Rectangle implements Shape{
+        height: number;
+        weight : number
+
+        constructor(height : number , weight : number){
+            this.height = height
+            this.weight = weight
+        }
+        
+        area(): number {
+            return this.height * this.weight
+        }
+    }
+
+    const calculation = (shape : Shape) => {
+        return shape.area()
+    }
+
+    const circle = new Circle(5)
+    const rectangle = new Rectangle(10,5)
+
+    console.log(calculation(circle).toFixed(2))
+    console.log(calculation(rectangle))
+
+
+    interface Vehicle{
+        start() : void;
+        stop() : void
+    }
+
+    class Car implements Vehicle{
+        start(): void {
+            console.log("The car is starting it's engine")
+        }
+
+        stop(): void {
+            console.log("The car is stopped it's engine")
+        }
+    }
+
+    class Bike implements Vehicle{
+        start(): void {
+            console.log("The bike is starting it's engine")
+        }
+        stop(): void {
+            console.log("The bike is stopped it's engine")
+        }
+    }
+
+    function driveVehicle(vehicle : Vehicle){
+        vehicle.start()
+        vehicle.stop()
+    }
+
+    const car = new Car()
+    const bike = new Bike()
+
+    driveVehicle(car)
+    console.log("------------------------------")
+    driveVehicle(bike)
+
 
 
 
