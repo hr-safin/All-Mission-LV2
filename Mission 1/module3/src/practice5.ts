@@ -54,7 +54,10 @@
                     const firstLetterUpper = str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()
                     newArr.push(firstLetterUpper)
                   
-                }   
+                } 
+                else{
+                    console.log("Wrong typed input please provide string input")
+                } 
             }
             const makeStr = newArr.join(" ")
             return makeStr
