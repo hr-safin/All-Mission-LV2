@@ -36,6 +36,7 @@
 
     const poorManAccount = new BankAccount(2324, "Mr Kashem", 100)
     poorManAccount.addDeposite(300)
+    poorManAccount.addDeposite(400)
     
     
 
