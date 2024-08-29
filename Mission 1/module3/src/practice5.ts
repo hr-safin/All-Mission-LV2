@@ -1,5 +1,5 @@
 {
-    // Static in oop
+    // Static in oop --> allocate same memory
 
     class Counter{
          static counter : number = 0
