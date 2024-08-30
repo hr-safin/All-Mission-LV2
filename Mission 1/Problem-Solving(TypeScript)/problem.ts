@@ -14,3 +14,25 @@ function greet(name : string) : string {
     return `hello, My name is ${name}`
 }
 // console.log(greet("Safin"))
+
+
+
+//Interface
+
+//3 ---> Define an interface Person with properties name (string) and age (number). Then, create a function printPerson(person: Person): string that returns a string describing the person.
+
+interface Person{
+    name : string;
+    age : string;
+}
+
+function printPerson(person : Person){
+    return `My name is ${name}`
+}
+
+const safin : Person = {
+    name : "Hasibur Rahman Safin",
+    age : "23"
+}
+
+console.log(printPerson(safin))
