@@ -88,3 +88,12 @@ function formatValue(value : string | number)  {
 }
 
 console.log(formatValue("23"))
+
+//7---Create a generic function identity<T>(arg: T): T that returns the input argument without any modification.
+
+function identity<T>(arg : T) : T{
+    return arg
+}
+
+//console.log(identity<number>(23))
+//console.log(identity<string>("Typescript"))
