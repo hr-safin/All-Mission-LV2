@@ -108,3 +108,24 @@ function logArray<T>(array : T[]) : void{
 
 //logArray<number>([1,2,2,3])
 //logArray<string>(["safin", "mahi"])
+
+//9---- Define a class Rectangle with properties width and height. Add a method area(): number that returns the area of the rectangle.
+
+class Rectangle{
+    height : number;
+    weight : number;
+
+    constructor(height : number, weight : number){
+        this.height = height
+        this.weight = weight
+    }
+
+    area(){
+        
+        return   this.height * this.weight
+    }
+}
+
+const rectangle1 = new Rectangle(12,5)
+
+console.log(rectangle1.area())
