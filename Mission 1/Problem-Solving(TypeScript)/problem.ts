@@ -60,4 +60,18 @@ let newInfo : Person2 = {
     address : "Sirajganj"
 }
 
-console.log(details(newInfo))
+//console.log(details(newInfo))
+
+//5---Create an enum Color with values Red, Green, and Blue. Write a function getColorName(color: Color): string that returns the name of the color.
+
+enum Color{
+    red,
+    blue,
+    black
+}
+
+function getColor(color : Color){
+    return Color[color]
+}
+
+console.log(getColor(Color.black))
