@@ -35,4 +35,29 @@ const safin : Person = {
     age : "23"
 }
 
-console.log(printPerson(safin))
+//console.log(printPerson(safin))
+
+//4---
+
+interface Person2{
+    name : string;
+    age : number;
+    address? : string
+}
+
+function details(person : Person2) {
+    let result = `${person.name} is ${person.age} years old `
+
+    if(person.address){
+        result += `They live at  ${person.address}`
+    }
+    return result
+}
+
+let newInfo : Person2 = {
+    name : "Hasibur Rahman Safin",
+    age : 23,
+    address : "Sirajganj"
+}
+
+console.log(details(newInfo))
