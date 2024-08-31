@@ -27,7 +27,7 @@ interface Person{
 }
 
 function printPerson(person : Person){
-    return `My name is ${name}`
+    return `My name is ${person.name} and i am ${person.age} years old`
 }
 
 const safin : Person = {
