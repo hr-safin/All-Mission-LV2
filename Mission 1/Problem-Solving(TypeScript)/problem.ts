@@ -97,3 +97,14 @@ function identity<T>(arg : T) : T{
 
 //console.log(identity<number>(23))
 //console.log(identity<string>("Typescript"))
+
+//8 ---Write a generic function logArray<T>(arr: T[]): void that logs each element of the array.
+
+function logArray<T>(array : T[]) : void{
+    array.forEach(elem => {
+        console.log(elem)
+    })
+}
+
+//logArray<number>([1,2,2,3])
+//logArray<string>(["safin", "mahi"])
