@@ -129,3 +129,18 @@ class Rectangle{
 const rectangle1 = new Rectangle(12,5)
 
 console.log(rectangle1.area())
+
+
+//10---Create a class Square that extends Rectangle and initializes both width and height to the same value.
+
+
+class Square extends Rectangle{
+    constructor(side : number){
+        super(side, side);
+    }
+}
+
+const square1 = new Square(5)
+
+console.log(square1.area())
+
