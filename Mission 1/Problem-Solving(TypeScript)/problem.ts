@@ -74,4 +74,17 @@ function getColor(color : Color){
     return Color[color]
 }
 
-console.log(getColor(Color.black))
+//console.log(getColor(Color.black))
+
+//6----Write a function formatValue(value: string | number): string that returns a formatted string depending on whether the input is a string or a number.
+
+function formatValue(value : string | number)  {
+   if(typeof value === "string"){
+    return `The type of value is ${typeof value}`
+   }
+   else{
+    return `The type of value is ${typeof value}`
+   }
+}
+
+console.log(formatValue("23"))
