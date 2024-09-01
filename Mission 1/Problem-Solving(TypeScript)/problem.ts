@@ -208,3 +208,18 @@ function swap<T,X>(arr : [T,X]) : [X,T]{
 
 //console.log(swap(["1",1]))
 
+//17---Create a generic interface Pair<T, U> that has two properties, first and second, both of type T and U respectively. Write a function makePair that creates and returns a Pair.
+
+
+interface Pair<T,U>{
+    first : T;
+    second : U;
+}
+
+
+function makePair<T,U>(first : T, second: U){
+    return {first, second}
+}
+
+console.log(makePair<number, string>(123, "safin"))
+
