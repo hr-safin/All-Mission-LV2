@@ -157,6 +157,25 @@ async function fetchData(url:string) : Promise<any> {
     }
 }
 
-fetchData('https://jsonplaceholder.typicode.com/todos/1')
-    .then(data => console.log(data))
+//fetchData('https://jsonplaceholder.typicode.com/todos/1')
+    //.then(data => console.log(data))
+
+//13---Create a type alias Point for an object with x and y properties (both numbers). Write a function distance(p1: Point, p2: Point): number that calculates the distance between two points.
+
+type Point = {
+    height : number;
+    weight : number;
+}
+
+function rectangle(value : Point){
+    return value.height * value.weight
+}
+
+
+const basicMath : Point = {
+    height : 12,
+    weight : 6
+}
+
+//console.log(rectangle(basicMath))
 
