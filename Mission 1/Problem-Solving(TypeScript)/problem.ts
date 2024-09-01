@@ -179,3 +179,22 @@ const basicMath : Point = {
 
 //console.log(rectangle(basicMath))
 
+
+//14---- Create an interface Car with make, model, and year properties. Make make and model readonly.
+
+interface Car{
+   readonly brand : "Toyota";
+    year : string;
+    model : string;
+
+}
+
+
+const car : Car = {
+    brand : "Toyota",
+    year : "2016",
+    model : "X7"
+}
+
+//console.log(car)
+
