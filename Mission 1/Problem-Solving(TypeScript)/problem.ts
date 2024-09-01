@@ -198,3 +198,13 @@ const car : Car = {
 
 //console.log(car)
 
+
+//16---- Write a function swap that takes a tuple of two elements and returns a new tuple with the elements swapped.
+
+
+function swap<T,X>(arr : [T,X]) : [X,T]{
+    return [arr[1], arr[0]]
+}
+
+//console.log(swap(["1",1]))
+
