@@ -142,5 +142,21 @@ class Square extends Rectangle{
 
 const square1 = new Square(5)
 
-console.log(square1.area())
+//console.log(square1.area())
+
+
+//11----- Write an async function fetchData(url: string): Promise<any> that fetches data from a given URL and returns the result.
+
+async function fetchData(url:string) : Promise<any> {
+    try{
+       const response = await fetch(url)
+       const data = await response.json()
+       return data
+    } catch(error){
+        console.log(error)
+    }
+}
+
+fetchData('https://jsonplaceholder.typicode.com/todos/1')
+    .then(data => console.log(data))
 
