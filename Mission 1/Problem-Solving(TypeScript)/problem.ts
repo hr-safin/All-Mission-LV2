@@ -232,3 +232,30 @@ function getProperty<T,K extends keyof T>(obj : T, key : K){
 
 const person1 =  { name : "Hasibur Rahman Safin", age : 20, gender : "male"}
 console.log(getProperty(person1, "name"))
+
+
+//19----  Create a generic class Box<T> that can store a value of type T. Add methods to get and set the value.
+
+class Box<T>{
+    
+    private value : T;
+    constructor(value : T){
+        this.value = value
+    }
+
+    getValue() : T {
+        return this.value
+    }
+
+    setValue( value : T)  {
+        this.value = value
+    }
+}
+
+
+const firstValue = new Box<number>(30)
+
+//console.log(firstValue.getValue())
+
+firstValue.setValue(100)
+//console.log(firstValue.getValue())
