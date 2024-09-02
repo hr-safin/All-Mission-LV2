@@ -259,3 +259,17 @@ const firstValue = new Box<number>(30)
 
 firstValue.setValue(100)
 //console.log(firstValue.getValue())
+
+//20--- Create a generic type alias Result<T> that represents an object with success (boolean) and value (T) properties. Write a function wrapInResult that takes a value of type T and returns a Result<T>.
+
+type Result<T> = {
+    success : boolean;
+    value : T
+}
+
+function wrapInResult<T>(value : T){
+    return {success : true, value}
+}
+
+const results = wrapInResult<number>(42);
+//console.log(results)
