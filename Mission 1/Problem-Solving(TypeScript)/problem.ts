@@ -221,5 +221,14 @@ function makePair<T,U>(first : T, second: U){
     return {first, second}
 }
 
-console.log(makePair<number, string>(123, "safin"))
+//console.log(makePair<number, string>(123, "safin"))
 
+
+//18---Write a generic function getProperty that takes an object and a key, and returns the value of the key. Add a constraint to ensure that the key exists in the object.
+
+function getProperty<T,K extends keyof T>(obj : T, key : K){
+    return obj[key]
+}
+
+const person1 =  { name : "Hasibur Rahman Safin", age : 20, gender : "male"}
+console.log(getProperty(person1, "name"))
