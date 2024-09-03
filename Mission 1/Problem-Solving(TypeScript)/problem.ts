@@ -281,4 +281,21 @@ function reverseString(word : string) : string {
     return word.split("").reverse().join("")
 }
 
-console.log(reverseString("Safin"))
+//console.log(reverseString("Safin"))
+
+
+//22 ----Write a function filterEvenNumbers(arr: number[]): number[] that returns a new array containing only the even numbers from the input array.
+
+function filterEvenNumbers(arr : number[]) : number[]{
+    let newArr = []
+
+    for(let elem of arr){
+        if(elem % 2 === 0){
+            newArr.push(elem)
+        }
+    }
+
+    return newArr
+}
+
+console.log(filterEvenNumbers([1,2,3,4,4,56,6,5,666,67,6767,456,60]))
