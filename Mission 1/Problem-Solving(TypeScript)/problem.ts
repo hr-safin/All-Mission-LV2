@@ -273,3 +273,12 @@ function wrapInResult<T>(value : T){
 
 const results = wrapInResult<number>(42);
 //console.log(results)
+
+
+//21----- Write a function reverseString(s: string): string that takes a string and returns the reversed string.
+
+function reverseString(word : string) : string {
+    return word.split("").reverse().join("")
+}
+
+console.log(reverseString("Safin"))
