@@ -298,4 +298,20 @@ function filterEvenNumbers(arr : number[]) : number[]{
     return newArr
 }
 
-console.log(filterEvenNumbers([1,2,3,4,4,56,6,5,666,67,6767,456,60]))
+//console.log(filterEvenNumbers([1,2,3,4,4,56,6,5,666,67,6767,456,60]))
+
+
+//22 ----Write a function filterOddNumbers(arr: number[]): number[] that returns a new array containing only the odd numbers from the input array.
+
+
+function filterOddNumbers(arr : number[]) : number[]{
+    let newArr = []
+
+    for(let elem of arr){
+        if(elem % 2 === 0){
+            newArr.push(elem)
+        }
+    }
+
+    return newArr
+}
