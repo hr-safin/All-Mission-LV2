@@ -315,3 +315,20 @@ function filterOddNumbers(arr : number[]) : number[]{
 
     return newArr
 }
+
+
+//23--
+
+type Bio ={
+    name : string;
+    age : number
+}
+
+function bioData(bio : Bio){
+    return `My name is ${bio.name} and i am ${bio.age} years old`
+} 
+
+console.log(bioData({
+    name : "Hasibur Rahman Safin",
+    age : 23
+}))
