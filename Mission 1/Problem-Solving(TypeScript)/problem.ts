@@ -332,3 +332,16 @@ console.log(bioData({
     name : "Hasibur Rahman Safin",
     age : 23
 }))
+
+
+//24--- Using generics with type aliases can be confusing, especially when dealing with nested generics.
+
+type Response2<T> = {
+    status: number;
+    payload: T;
+};
+
+const userResponse: Response2<{ id: number; name: string }> = {
+    status: 200,
+    payload: { id: 1, name: 'Alice' }
+};
