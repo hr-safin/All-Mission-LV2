@@ -345,3 +345,12 @@ const userResponse: Response2<{ id: number; name: string }> = {
     status: 200,
     payload: { id: 1, name: 'Alice' }
 };
+
+//25--- Combining unions and generics can sometimes lead to unexpected behavior.
+
+function wrapInArray<T>(x: T | T[]): T[] {
+    return Array.isArray(x) ? x : [x];
+}
+
+const single = wrapInArray(5); // [5]
+const multiple = wrapInArray([1, 2, 3]); // [1, 2, 3]
