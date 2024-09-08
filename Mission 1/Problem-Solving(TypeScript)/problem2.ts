@@ -13,4 +13,19 @@ class Person{
 }
 
 const person = new Person("safin", "24", "male")
-console.log(person)
+//console.log(person)
+
+//2.Problem 2: Implement Inheritance
+//2.Problem: Create a Student class that extends the Person class. Add a property studentId to the Student class.
+
+class Student extends Person{
+    studentId : number;
+
+    constructor(name : string, age : string , gender : string, studentId : number){
+        super(name, age, gender);
+        this.studentId = studentId;
+    }
+}
+
+const student1 = new Student("Nur", "23", "female", 232323)
+console.log(student1)
