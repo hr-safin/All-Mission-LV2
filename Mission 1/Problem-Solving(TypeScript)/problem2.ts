@@ -14,6 +14,7 @@ class Person{
 
 const person = new Person("safin", "24", "male")
 //console.log(person)
+//console.log(person)
 
 //2.Problem 2: Implement Inheritance
 //2.Problem: Create a Student class that extends the Person class. Add a property studentId to the Student class.
