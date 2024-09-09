@@ -28,4 +28,6 @@ class Student extends Person{
 }
 
 const student1 = new Student("Nur", "23", "female", 232323)
+const student2 = new Student("Nur", "23", "female", 232323)
 console.log(student1)
+console.log(student2)
