@@ -30,5 +30,31 @@ class Student extends Person{
 
 const student1 = new Student("Nur", "23", "female", 232323)
 const student2 = new Student("Nur", "23", "female", 232323)
-console.log(student1)
-console.log(student2)
+//console.log(student1)
+//console.log(student2)
+
+
+//Problem-2 : Create an interface Animal with methods eat and sleep. Implement this interface in a Dog class.
+
+
+interface Animal{
+    eat() : void;
+    sleep() : void;
+}
+
+class Dog implements Animal{
+   
+    eat() : void{
+        console.log("Dog is eating")
+    }
+
+    sleep(): void {
+        console.log("Dog is sleeping")
+    }
+}
+
+const dog1 = new Dog()
+
+dog1.eat()
+dog1.sleep()
+
