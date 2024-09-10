@@ -58,3 +58,22 @@ const dog1 = new Dog()
 dog1.eat()
 dog1.sleep()
 
+//Problem 3 ---  Modify the Person class to accept optional parameters in the constructor.
+
+class Info{
+    name : string;
+    age? : number;
+    gender? : string;
+    constructor(name : string, age : number, gender : string){
+        this.name = name
+        this.age = age
+        this.gender = gender
+    }
+
+    getInfo(){
+        console.log(`My name is ${this.name}, I am ${this.age} years old and I am ${this.gender}`)
+    }
+}
+
+const info1 = new Info("Hasibur Rahman Safin", 24, "male")
+console.log(info1)
