@@ -58,7 +58,7 @@ const dog1 = new Dog()
 dog1.eat()
 dog1.sleep()
 
-//Problem 3 ---  Modify the Person class to accept optional parameters in the constructor.
+//Problem 4 ---  Modify the Person class to accept optional parameters in the constructor.
 
 class Info{
     name : string;
@@ -76,4 +76,30 @@ class Info{
 }
 
 const info1 = new Info("Hasibur Rahman Safin", 24, "male")
-console.log(info1)
+//console.log(info1)
+
+
+//Problem 5 --- Create a Car class with a private property speed. Implement getter and setter methods to access and modify speed.
+
+class Car{
+    private _speed : number;
+
+    constructor(private _speed : number){
+        this._speed = _speed
+    }
+
+    get speed() : number {
+       return this._speed
+    }
+
+    set speed(value : number)  {
+        if(value < 0){
+            throw new Error("Something is wrong")
+        }
+
+        this._speed = value
+    }
+}
+
+
+const car1 = new Car(50)
