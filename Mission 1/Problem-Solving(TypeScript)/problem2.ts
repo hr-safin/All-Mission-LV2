@@ -84,7 +84,7 @@ const info1 = new Info("Hasibur Rahman Safin", 24, "male")
 class Car{
     private _speed : number;
 
-    constructor(private _speed : number){
+    constructor( _speed : number){
         this._speed = _speed
     }
 
@@ -103,3 +103,29 @@ class Car{
 
 
 const car1 = new Car(50)
+
+
+//Problem 6 ---- Implement a singleton class Database that can only have one instance.
+
+
+class Database {
+    private static instance: Database;
+
+    private constructor() {}
+
+    static getInstance(): Database {
+        if (!Database.instance) {
+            Database.instance = new Database();
+        }
+        return Database.instance;
+    }
+
+    connect(): void {
+        console.log("Connected to the database");
+    }
+}
+
+const db1 = Database.getInstance();
+const db2 = Database.getInstance();
+
+console.log(db1 === db2);  // Output: true
