@@ -299,4 +299,35 @@ const allOrders = orderRepository.getAll();
 console.log("All Orders:", allOrders);
 
 
+//Problem15 --- Create a ShoppingCart class that can add Product objects. Implement a discount mechanism that applies a percentage discount to the total price.
+
+class Product2 {
+    constructor(public name: string, public price: number) {}
+}
+
+class ShoppingCart {
+    private products: Product[] = [];
+    private discount: number = 0;  // percentage
+
+    addProduct(product: Product): void {
+        this.products.push(product);
+    }
+
+    applyDiscount(discount: number): void {
+        this.discount = discount;
+    }
+
+    getTotalPrice(): number {
+        const total = this.products.reduce((sum, product) => sum + product.price, 0);
+        return total - (total * this.discount / 100);
+    }
+}
+
+const cart = new ShoppingCart();
+//cart.addProduct(new Product("Laptop", 1000));
+//cart.addProduct(new Product("Phone", 500));
+cart.applyDiscount(10);
+console.log(cart.getTotalPrice());  // Output: 1350
+
+
 
