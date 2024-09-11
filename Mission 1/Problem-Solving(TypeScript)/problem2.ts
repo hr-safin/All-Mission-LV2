@@ -146,3 +146,27 @@ class Point2{
 const point1 = new Point2(5);
 const point2 = new Point2(3, 4);
 console.log(point1, point2);
+
+//Problem8 ---- Create an abstract class Vehicle with an abstract method move. Create Bike and Car classes that implement move.
+
+abstract class Vehicle {
+    abstract move(): void;
+}
+
+class Bike extends Vehicle {
+    move(): void {
+        console.log("Bike is moving");
+    }
+}
+
+class Car2 extends Vehicle {
+    move(): void {
+        console.log("Car is moving");
+    }
+}
+
+const bike = new Bike();
+const car3 = new Car2();
+bike.move();
+car3.move();
+
