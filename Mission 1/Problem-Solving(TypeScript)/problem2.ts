@@ -331,3 +331,41 @@ console.log(cart.getTotalPrice());  // Output: 1350
 
 
 
+//problem 16 
+
+
+class Book5 {
+    constructor(public title: string, public author: string) {}
+}
+
+class User2 {
+    private borrowedBooks: Book[] = [];
+
+    borrowBook(book: Book): void {
+        if (this.borrowedBooks.length >= 3) {
+            console.log("Borrow limit reached.");
+        } else {
+            this.borrowedBooks.push(book);
+        }
+    }
+
+    returnBook(book: Book): void {
+        this.borrowedBooks = this.borrowedBooks.filter(b => b !== book);
+    }
+
+    getBorrowedBooks(): Book[] {
+        return this.borrowedBooks;
+    }
+}
+
+const user1 = new User2();
+const book1 = new Book5("1984", "George Orwell");
+const book2 = new Book5("Moby Dick", "Herman Melville");
+
+user1.borrowBook(book1);
+user1.borrowBook(book2);
+console.log(user1.getBorrowedBooks());
+
+
+
+
