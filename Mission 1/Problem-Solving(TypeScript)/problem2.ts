@@ -129,3 +129,20 @@ const db1 = Database.getInstance();
 const db2 = Database.getInstance();
 
 console.log(db1 === db2);  // Output: true
+
+
+//problem7 ----  Simulate constructor overloading in TypeScript by using optional parameters.
+
+class Point2{
+    x: number;
+    y: number;
+
+    constructor(x: number, y?: number) {
+        this.x = x;
+        this.y = y ?? 0;  // If y is undefined, set to 0
+    }
+}
+
+const point1 = new Point2(5);
+const point2 = new Point2(3, 4);
+console.log(point1, point2);
