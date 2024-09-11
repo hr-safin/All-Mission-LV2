@@ -170,3 +170,18 @@ const car3 = new Car2();
 bike.move();
 car3.move();
 
+//Problem10 --- Create a class Book with a title property that is readonly.
+
+class Book {
+    readonly title: string;
+
+    constructor(title: string) {
+        this.title = title;
+    }
+}
+
+const book = new Book("The Great Gatsby");
+console.log(book.title);
+// book.title = "New Title";  // Error: Cannot assign to 'title' because it is a read-only property
+
+
