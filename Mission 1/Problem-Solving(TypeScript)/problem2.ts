@@ -208,4 +208,95 @@ class Car4 {
 const myCar = new Car4(Color.Red);
 myCar.describe();
 
+//Problem12 --- 
+
+// Define the Entity interface
+interface Entity {
+    id: number;
+}
+
+// Create a generic Repository class
+class Repository<T extends Entity> {
+    private items: T[] = [];
+
+    // Create a new entity (Add)
+    create(item: T): void {
+        this.items.push(item);
+        console.log(`${item.constructor.name} created:`, item);
+    }
+
+    // Read or retrieve an entity by ID
+    read(id: number): T | undefined {
+        return this.items.find(item => item.id === id);
+    }
+
+    // Update an existing entity
+    update(item: T): void {
+        const index = this.items.findIndex(i => i.id === item.id);
+        if (index !== -1) {
+            this.items[index] = item;
+            console.log(`${item.constructor.name} updated:`, item);
+        } else {
+            console.log(`${item.constructor.name} with ID ${item.id} not found.`);
+        }
+    }
+
+    // Delete an entity by ID
+    delete(id: number): void {
+        this.items = this.items.filter(item => item.id !== id);
+        console.log(`Entity with ID ${id} deleted.`);
+    }
+
+    // Get all entities
+    getAll(): T[] {
+        return this.items;
+    }
+}
+
+// Define the User class that implements the Entity interface
+class User implements Entity {
+    constructor(public id: number, public name: string, public email: string) {}
+}
+
+// Define the Product class that implements the Entity interface
+class Product implements Entity {
+    constructor(public id: number, public name: string, public price: number) {}
+}
+
+// Define the Order class that implements the Entity interface
+class Order implements Entity {
+    constructor(public id: number, public productId: number, public quantity: number) {}
+}
+
+// Create repository instances for different entity types
+const userRepository = new Repository<User>();
+const productRepository = new Repository<Product>();
+const orderRepository = new Repository<Order>();
+
+// Adding entities
+userRepository.create(new User(1, "Alice", "alice@example.com"));
+userRepository.create(new User(2, "Bob", "bob@example.com"));
+
+productRepository.create(new Product(1, "Laptop", 1200));
+productRepository.create(new Product(2, "Phone", 800));
+
+orderRepository.create(new Order(1, 1, 2)); // 2 Laptops
+orderRepository.create(new Order(2, 2, 3)); // 3 Phones
+
+// Retrieve a user by ID
+const user = userRepository.read(1);
+console.log("Read User:", user);
+
+// Update a user
+const updatedUser = new User(1, "Alice Smith", "alice.smith@example.com");
+userRepository.update(updatedUser);
+
+// Delete a product
+productRepository.delete(2);
+
+// Get all orders
+const allOrders = orderRepository.getAll();
+console.log("All Orders:", allOrders);
+
+
 
