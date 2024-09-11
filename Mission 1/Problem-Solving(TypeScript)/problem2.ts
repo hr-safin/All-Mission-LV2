@@ -185,3 +185,27 @@ console.log(book.title);
 // book.title = "New Title";  // Error: Cannot assign to 'title' because it is a read-only property
 
 
+//Problem11 -- Create an enum Color and use it in a Car class.
+
+enum Color {
+    Red,
+    Green,
+    Blue
+}
+
+class Car4 {
+    color: Color;
+
+    constructor(color: Color) {
+        this.color = color;
+    }
+
+    describe(): void {
+        console.log(`This car is ${Color[this.color]}`);
+    }
+}
+
+const myCar = new Car4(Color.Red);
+myCar.describe();
+
+
