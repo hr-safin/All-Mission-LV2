@@ -366,6 +366,168 @@ user1.borrowBook(book1);
 user1.borrowBook(book2);
 console.log(user1.getBorrowedBooks());
 
+class Book {
+    id: number;
+    title: string;
+    author: string;
+    totalCopies: number;
+    copiesAvailable: number;
+  
+    constructor(id: number, title: string, author: string, totalCopies: number) {
+      this.id = id;
+      this.title = title;
+      this.author = author;
+      this.totalCopies = totalCopies;
+      this.copiesAvailable = totalCopies;
+    }
+  
+    // Check if the book is available for borrowing
+    isAvailable(): boolean {
+      return this.copiesAvailable > 0;
+    }
+  
+    // Borrow a book if available
+    borrow(): boolean {
+      if (this.isAvailable()) {
+        this.copiesAvailable--;
+        return true;
+      }
+      return false;
+    }
+  
+    // Return a borrowed book
+    returnBook(): void {
+      if (this.copiesAvailable < this.totalCopies) {
+        this.copiesAvailable++;
+      }
+    }
+  }
+  
+  class Member {
+    memberId: number;
+    name: string;
+    borrowedBooks: Book[];
+  
+    constructor(memberId: number, name: string) {
+      this.memberId = memberId;
+      this.name = name;
+      this.borrowedBooks = [];
+    }
+  
+    // Borrow a book and add it to the member's list of borrowed books
+    borrowBook(book: Book): string {
+      if (this.borrowedBooks.length >= 3) {
+        return `${this.name} cannot borrow more than 3 books.`;
+      }
+  
+      if (book.isAvailable()) {
+        book.borrow();
+        this.borrowedBooks.push(book);
+        return `${this.name} successfully borrowed "${book.title}".`;
+      } else {
+        return `"${book.title}" is currently unavailable.`;
+      }
+    }
+  
+    // Return a borrowed book and update the member's list
+    returnBook(book: Book): string {
+      const index = this.borrowedBooks.findIndex(b => b.id === book.id);
+      if (index !== -1) {
+        this.borrowedBooks.splice(index, 1);
+        book.returnBook();
+        return `${this.name} successfully returned "${book.title}".`;
+      } else {
+        return `${this.name} has not borrowed "${book.title}".`;
+      }
+    }
+  
+    // List all borrowed books
+    listBorrowedBooks(): string {
+      if (this.borrowedBooks.length === 0) {
+        return `${this.name} has not borrowed any books.`;
+      }
+  
+      const bookTitles = this.borrowedBooks.map(b => `"${b.title}"`).join(", ");
+      return `${this.name} has borrowed: ${bookTitles}.`;
+    }
+  }
+  
+  class Library {
+    books: Book[];
+  
+    constructor() {
+      this.books = [];
+    }
+  
+    // Add a new book to the library
+    addBook(book: Book): void {
+      this.books.push(book);
+    }
+  
+    // Find a book by its title
+    findBookByTitle(title: string): Book | null {
+      const book = this.books.find(b => b.title.toLowerCase() === title.toLowerCase());
+      return book || null;
+    }
+  
+    // Borrow a book from the library by a member
+    borrowBook(member: Member, title: string): string {
+      const book = this.findBookByTitle(title);
+      if (book) {
+        return member.borrowBook(book);
+      } else {
+        return `"${title}" is not available in the library.`;
+      }
+    }
+  
+    // Return a book to the library by a member
+    returnBook(member: Member, title: string): string {
+      const book = this.findBookByTitle(title);
+      if (book) {
+        return member.returnBook(book);
+      } else {
+        return `"${title}" is not a valid book in this library.`;
+      }
+    }
+  }
+  
+  // Example usage:
+  
+  // Create library
+  const library = new Library();
+  
+  // Add books to the library
+  library.addBook(new Book("13"));
+  library.addBook(new Book("23"));
+  
+  // Create a member
+  const alice = new Member(101, "Alice");
+  
+  // Alice borrows "The Great Gatsby"
+  console.log(library.borrowBook(alice, "The Great Gatsby")); // Alice successfully borrowed "The Great Gatsby"
+  
+  // Alice borrows "1984"
+  console.log(library.borrowBook(alice, "1984")); // Alice successfully borrowed "1984"
+  
+  // Alice tries to borrow another copy of "1984"
+  console.log(library.borrowBook(alice, "1984")); // Alice successfully borrowed "1984"
+  
+  // Alice tries to borrow a fourth book (exceeds the limit)
+  console.log(library.borrowBook(alice, "The Great Gatsby")); // Alice cannot borrow more than 3 books.
+  
+  // List Alice's borrowed books
+  console.log(alice.listBorrowedBooks()); // Alice has borrowed: "The Great Gatsby", "1984".
+  
+  // Alice returns "The Great Gatsby"
+  console.log(library.returnBook(alice, "The Great Gatsby")); // Alice successfully returned "The Great Gatsby"
+  
+  // Alice returns "1984"
+  console.log(library.returnBook(alice, "1984")); // Alice successfully returned "1984"
+  
+  // List Alice's borrowed books again
+  console.log(alice.listBorrowedBooks()); // Alice has not borrowed any books.
+  
+
 
 
 
