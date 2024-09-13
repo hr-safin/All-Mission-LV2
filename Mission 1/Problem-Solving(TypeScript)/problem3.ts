@@ -18,6 +18,19 @@ console.log(getProperty(person, 'name'));
 // What if you want to ensure only specific keys can be passed?
 // E.g., allow only 'name' or 'location', not 'age'
 
+function getConstrainedProperty<K extends keyof Person & ('name' | 'location')>(
+    obj: Person,
+    key: K
+): Person[K] {
+    return obj[key];
+}
+
+// Now the following works as expected:
+console.log(getConstrainedProperty(person, 'name')); // John
+console.log(getConstrainedProperty(person, 'location')); // New York
+
+// The following gives a compile-time error:
+//console.log(getConstrainedProperty(person, 'age')); // Error: Argument of type '"age"' is not assignable
 
 
 
