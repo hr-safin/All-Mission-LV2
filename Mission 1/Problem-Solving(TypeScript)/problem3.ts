@@ -44,6 +44,18 @@ console.log(mergedObj.name); // Alice
 console.log(mergedObj.age);  // 30
 
 
+function merge2<T extends object, U extends object>(obj1: T, obj2: U): T & U {
+    return { ...obj1, ...obj2 };
+}
+
+// Now this works the same as before:
+const validMerge = merge2({ name: 'Alice' }, { age: 30 });
+console.log(validMerge.name); // Alice
+console.log(validMerge.age);  // 30
+
+// The following now produces a compile-time error:
+const invalidMerge = merge(10, { age: 30 }); // Error: Argument of type 'number' is not assignable to parameter of type 'object'
+
 
 
 
