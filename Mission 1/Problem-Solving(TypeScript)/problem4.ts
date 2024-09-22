@@ -67,5 +67,13 @@ console.log(updatedPerson.name); // Alice
 console.log(updatedPerson.age);  // 31
 
 
+function wrapInArray<T>(x: T | T[]): T[] {
+    return Array.isArray(x) ? x : [x];
+}
+
+const single = wrapInArray(5); // [5]
+const multiple = wrapInArray([1, 2, 3]); // [1, 2, 3]
+
+
 
 }
