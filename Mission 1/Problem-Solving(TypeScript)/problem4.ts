@@ -55,5 +55,17 @@ console.log(validMerge.age);  // 30
 const invalidMerge = merge(10, { age: 30 }); // Error: Argument of type 'number' is not assignable to parameter of type 'object'
 
 
+function updateObject<T extends object>(obj: T, updates: Partial<T>): T {
+    return { ...obj, ...updates };
+}
+
+const person2 = { name: 'Alice', age: 30 };
+
+// We can update some properties without providing all:
+const updatedPerson = updateObject(person, { age: 31 });
+console.log(updatedPerson.name); // Alice
+console.log(updatedPerson.age);  // 31
+
+
 
 }
