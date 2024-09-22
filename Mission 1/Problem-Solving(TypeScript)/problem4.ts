@@ -75,5 +75,16 @@ const single = wrapInArray(5); // [5]
 const multiple = wrapInArray([1, 2, 3]); // [1, 2, 3]
 
 
+type Response2<T> = {
+    status: number;
+    payload: T;
+};
+
+const userResponse: Response2<{ id: number; name: string }> = {
+    status: 200,
+    payload: { id: 1, name: 'Alice' }
+};
+
+
 
 }
