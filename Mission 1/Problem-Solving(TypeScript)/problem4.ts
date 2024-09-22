@@ -17,6 +17,20 @@ console.log(getProperty(person, 'name'));
 
 
 
+function getConstrainedProperty<K extends keyof Person & ('name' | 'location')>(
+    obj: Person,
+    key: K
+): Person[K] {
+    return obj[key];
+}
+
+// Now the following works as expected:
+console.log(getConstrainedProperty(person, 'name')); // John
+console.log(getConstrainedProperty(person, 'location')); // New York
+console.log(getConstrainedProperty(person, 'location')); // New York
+
+
+
 
 
 }
