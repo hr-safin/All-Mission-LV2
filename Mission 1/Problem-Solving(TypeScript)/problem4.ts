@@ -133,6 +133,33 @@ user1.name = "Hasibur Rahman Safin"
 
 
 
+interface Shape{
+    getArea : () => number
+}
+
+class Rectangle implements Shape{
+    public constructor(protected readonly width : number, protected readonly height : number){
+
+    }
+
+    public getArea() : number{
+        return this.width * this.height
+    }
+}
+
+class Square extends Rectangle{
+    public constructor(public width : number){
+        super(width, width)
+    }
+
+    // GetArea Inherited from rectangle
+    
+}
+
+const area = new Rectangle(12,24)
+const area1 = new Square(12)
+console.log(area1)
+console.log(area1.getArea())
 
 
 
