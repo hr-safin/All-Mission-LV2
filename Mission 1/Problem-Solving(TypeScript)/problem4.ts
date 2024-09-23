@@ -181,6 +181,24 @@ const count1 = new Counter()
 console.log(Counter.increment()) // ---> Same Memory 
 console.log(Counter.increment())
 
+// Another example
+
+class Calculator{
+
+    static add(num1 : number , num2 : number){
+        return num1 + num2
+    }
+
+    static subtract(num1 : number , num2 : number){
+        return num1 - num2
+    }
+}
+
+const result1 = Calculator.add(45,32)
+const result2 = Calculator.subtract(100,30)
+console.log(result1)
+console.log(result2)
+
 
 
 }
