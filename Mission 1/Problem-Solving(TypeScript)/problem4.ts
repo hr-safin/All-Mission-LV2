@@ -201,4 +201,32 @@ console.log(result2)
 
 
 
+class StringUtils{
+    static capitalize(str : string)  {
+        //return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()
+        const spitArr = str.split(" ")
+        let newArr = []
+        for(let str of spitArr){
+            if(typeof str === "string"){
+                const firstLetterUpper = str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()
+                
+                newArr.push(firstLetterUpper)
+              
+            } 
+            else{
+                console.log("Wrong typed input please provide string input")
+            } 
+        }
+        const makeStr = newArr.join(" ")
+        return makeStr
+    }
+}
+
+const capital = StringUtils.capitalize("john doe")
+
+console.log(capital)
+
+
+
+
 }
