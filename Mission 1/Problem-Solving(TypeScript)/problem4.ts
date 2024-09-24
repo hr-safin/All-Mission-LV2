@@ -325,4 +325,21 @@ class Student1 implements Details{
 }
 
 
+class Student2 implements Details{
+    study(): void {
+        console.log("Student-2 studies for 6 hours everyday")
+    }
+
+    sleep(): void {
+        console.log("Student-2 sleeps 9 hours a day")
+    }
+}
+
+const student1 = new Student1()
+
+console.log("------------------Abstraction-------------------")
+student1.study()
+
+
+
 }
