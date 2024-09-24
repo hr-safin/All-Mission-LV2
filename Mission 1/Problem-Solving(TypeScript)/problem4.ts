@@ -269,4 +269,42 @@ console.log(calculation(circle).toFixed(2))
 console.log(calculation(rectangle))
 
 
+
+interface Vehicle{
+    start() : void;
+    stop() : void
+}
+
+class Car implements Vehicle{
+    start(): void {
+        console.log("The car is starting it's engine")
+    }
+
+    stop(): void {
+        console.log("The car is stopped it's engine")
+    }
+}
+
+class Bike implements Vehicle{
+    start(): void {
+        console.log("The bike is starting it's engine")
+    }
+    stop(): void {
+        console.log("The bike is stopped it's engine")
+    }
+}
+
+function driveVehicle(vehicle : Vehicle){
+    vehicle.start()
+    vehicle.stop()
+}
+
+const car = new Car()
+const bike = new Bike()
+
+driveVehicle(car)
+console.log("------------------------------")
+driveVehicle(bike)
+
+
 }
