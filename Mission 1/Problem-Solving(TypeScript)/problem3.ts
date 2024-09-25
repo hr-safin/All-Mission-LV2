@@ -67,6 +67,16 @@ const person2 = { name: 'Alice', age: 30 };
 const updatedPerson = updateObject(person, { age: 31 });
 console.log(updatedPerson.name); // Alice
 console.log(updatedPerson.age);  // 31
+function updateObject<T extends object>(obj: T, updates: Partial<T>): T {
+    return { ...obj, ...updates };
+}
+
+const person2 = { name: 'Alice', age: 30 };
+
+// We can update some properties without providing all:
+const updatedPerson = updateObject(person, { age: 31 });
+console.log(updatedPerson.name); // Alice
+console.log(updatedPerson.age);  // 31
 
 // Still type-safe, wrong property names will throw an error:
 //const invalidUpdate = updateObject(person2, { height: 170 }); // Error: Object literal may only specify known properties
