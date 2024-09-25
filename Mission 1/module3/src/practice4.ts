@@ -80,6 +80,14 @@
         // GetArea Inherited from rectangle
         
     }
+    class Square extends Rectangle{
+        public constructor(public width : number){
+            super(width, width)
+        }
+
+        // GetArea Inherited from rectangle
+        
+    }
 
     const area = new Rectangle(12,24)
     const area1 = new Square(12)
