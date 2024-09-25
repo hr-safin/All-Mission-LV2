@@ -237,6 +237,132 @@
     const withdraw = new BankAccount(100)
     console.log(deposit)
     console.log(withdraw)
+    interface Vehicle{
+        start() : void;
+        stop() : void
+    }
+
+    class Car implements Vehicle{
+        start(): void {
+            console.log("The car is starting it's engine")
+        }
+
+        stop(): void {
+            console.log("The car is stopped it's engine")
+        }
+    }
+
+    class Bike implements Vehicle{
+        start(): void {
+            console.log("The bike is starting it's engine")
+        }
+        stop(): void {
+            console.log("The bike is stopped it's engine")
+        }
+    }
+
+    function driveVehicle(vehicle : Vehicle){
+        vehicle.start()
+        vehicle.stop()
+    }
+
+    const car = new Car()
+    const bike = new Bike()
+
+    driveVehicle(car)
+    console.log("------------------------------")
+    driveVehicle(bike)
+
+
+    // Abstraction ---> interface -- abstract class
+
+
+    interface Details{
+        study() : void
+        sleep() : void
+    }
+
+    class Student1 implements Details{
+        study(): void {
+            console.log("Student-1 studies for 8 hours everyday")
+        }
+
+        sleep(): void {
+            console.log("Student-1 sleeps 7 hours a day")
+        }
+    }
+
+    class Student2 implements Details{
+        study(): void {
+            console.log("Student-2 studies for 6 hours everyday")
+        }
+
+        sleep(): void {
+            console.log("Student-2 sleeps 9 hours a day")
+        }
+    }
+
+    const student1 = new Student1()
+
+    console.log("------------------Abstraction-------------------")
+    student1.study()
+
+    // Abstract class
+
+
+    abstract class File{
+        abstract pdf() : void
+        abstract jpg() : void
+    }
+
+
+    class Document1 extends File{
+        pdf(): void {
+            console.log("The file is in pdf format")
+        }
+
+        jpg(): void {
+            console.log("The file is in jpg format")   
+        }
+    } 
+
+
+    const document1 = new Document1()
+    document1.jpg()
+
+
+    // Encapsulation in typescript
+
+    class BankAccount{
+        private _balance : number;
+
+        constructor(_balance : number){
+            this._balance = _balance
+        }
+
+        private deposit(amount : number){
+            
+            if(amount > 0){
+                this._balance += amount
+            }else{
+                console.log("Deposit amount must be positive")
+            }
+        }
+
+        private withdraw(amount : number){
+            if(amount < this._balance){
+                this._balance -+ amount
+            }
+            else{
+                console.log("Insufficient balance please deposit")
+            }
+        }
+    }
+
+    const deposit = new BankAccount(300)
+    const withdraw = new BankAccount(100)
+    console.log(deposit)
+    console.log(withdraw)
 
 
 
