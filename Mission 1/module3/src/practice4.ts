@@ -72,14 +72,14 @@
         }
     }
 
-    class Square extends Rectangle{
-        public constructor(public width : number){
-            super(width, width)
-        }
+    // class Square extends Rectangle{
+    //     public constructor(public width : number){
+    //         super(width, width)
+    //     }
 
-        // GetArea Inherited from rectangle//
+    //     // GetArea Inherited from rectangle//
         
-    }
+    // }
     class Square extends Rectangle{
         public constructor(public width : number){
             super(width, width)
