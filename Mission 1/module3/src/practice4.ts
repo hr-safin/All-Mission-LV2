@@ -97,21 +97,21 @@
 
     // More example of inheritance
 
-    class Person{
-        name : string
-        age : number
-        address : string
+    // class Person{
+    //     name : string
+    //     age : number
+    //     address : string
 
-        constructor(name : string, age : number, address : string){
-            this.name = name
-            this.age = age
-            this.address = address
-        }
+    //     constructor(name : string, age : number, address : string){
+    //         this.name = name
+    //         this.age = age
+    //         this.address = address
+    //     }
 
-        sleepTime(hr : number){
-            console.log(`${this.name} sleeps ${hr} hours everyday`)
-        }
-    }
+    //     sleepTime(hr : number){
+    //         console.log(`${this.name} sleeps ${hr} hours everyday`)
+    //     }
+    // }
 
 
     class Student extends Person{
