@@ -1,27 +1,27 @@
 {
     // Class and object -->
 
-    class Hello{
-        name : string;
-        age : number;
-        address : string;
+    // class Hello{
+    //     name : string;
+    //     age : number;
+    //     address : string;
 
-        constructor(name : string, age : number, address : string){
-            this.name = name
-            this.age = age
-            this.address = address
-        }
+    //     constructor(name : string, age : number, address : string){
+    //         this.name = name
+    //         this.age = age
+    //         this.address = address
+    //     }
 
-        getBalance(){
-            console.log("Hello World")
-        }
-    }
+    //     getBalance(){
+    //         console.log("Hello World")
+    //     }
+    // }
 
-    const hello = new Hello("s", 23, "ss")
+    //const hello = new Hello("s", 23, "ss")
     
-    const hello1 = new Hello("s", 23, "ss")
+    //const hello1 = new Hello("s", 23, "ss")
     
-    const hello2 = new Hello("s", 23, "ss")
+    //const hello2 = new Hello("s", 23, "ss")
     
     //const hello3 = new Hello("s", 23, "ss")
 
