@@ -30,21 +30,21 @@
 
     //Class and object
 
-    class User{
-        name : string
-        age : number
-        address : string
+    // class User{
+    //     name : string
+    //     age : number
+    //     address : string
 
-        constructor(name : string, age : number, address : string){
-            this.name = name
-            this.age = age
-            this.address = address
-        }
+    //     constructor(name : string, age : number, address : string){
+    //         this.name = name
+    //         this.age = age
+    //         this.address = address
+    //     }
 
-        hasCamera(){
-            console.log(`${this.name} has a wonderful camera`)
-        }
-    }
+    //     hasCamera(){
+    //         console.log(`${this.name} has a wonderful camera`)
+    //     }
+    // }
 
     //Lets create an instance
 
