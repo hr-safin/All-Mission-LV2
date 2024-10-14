@@ -80,19 +80,19 @@
     //     // GetArea Inherited from rectangle//
         
     // }
-    class Square extends Rectangle{
-        public constructor(public width : number){
-            super(width, width)
-        }
+    // class Square extends Rectangle{
+    //     public constructor(public width : number){
+    //         super(width, width)
+    //     }
 
-        // GetArea Inherited from rectangle
+    //     // GetArea Inherited from rectangle
         
-    }
+    // }
 
-    const area = new Rectangle(12,24)
-    const area1 = new Square(12)
-    console.log(area1)
-    console.log(area1.getArea())
+    //const area = new Rectangle(12,24)
+    //const area1 = new Square(12)
+    //console.log(area1)
+    //console.log(area1.getArea())
 
 
     // More example of inheritance
