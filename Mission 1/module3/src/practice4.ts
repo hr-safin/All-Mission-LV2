@@ -114,17 +114,17 @@
     // }
 
 
-    class Student extends Person{
-        subject : string
-        constructor(name : string, age : number, address : string,subject : string){
-            super(name, age, address)
-            this.subject = subject
-        }
+    // class Student extends Person{
+    //     subject : string
+    //     constructor(name : string, age : number, address : string,subject : string){
+    //         super(name, age, address)
+    //         this.subject = subject
+    //     }
 
-        haveClass(many : number){
-            console.log(`${this.name} has ${many} classes today`)
-        }
-    }
+    //     haveClass(many : number){
+    //         console.log(`${this.name} has ${many} classes today`)
+    //     }
+    // }
 
     const student1 = new Student("Hasibur Rahman Safin",24, "Rampura Mohanagar Project", "Computer Science")
     console.log(student1)
